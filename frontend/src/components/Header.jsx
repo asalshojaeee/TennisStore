@@ -1,9 +1,13 @@
 
+import { FiSearch } from "react-icons/fi";
+import { PiSignInFill } from "react-icons/pi";
 
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
+import { GiTennisRacket } from "react-icons/gi";
+import { HiOutlineShoppingBag } from "react-icons/hi2";
 
-import logo1 from '../assets/logo/logo1.png'
+import logo from '../assets/logo/logo.png'
 
 const Header = () => {
 
@@ -11,20 +15,37 @@ const Header = () => {
     return (
         <>
 
-            <section>
-                <div className="flex justify-between bg-slate-200 h-28 items-center">
-
-                   <Link to={'/'}>
-                   <img src={logo1} alt="" className='w-13 h-13'/>
-                   
-                   </Link>
+            <section className="flex justify-between mt-3  items-center">
 
 
-                    <input type="text" placeholder="Search" className='rounded-xl h-7 w-50'/>
+                <Link to={'/'}>
+                    <GiTennisRacket className="w-16 h-16 text-blue-200 mx-5" />
 
+                </Link>
+                <div>
 
                 </div>
-          
+
+                <div className="flex justify-between items-center p-5 gap-3">
+                    <div className="text-xl w-13 shadow-2xl bg-blue-400 h-10 flex items-center justify-center rounded-full text-white">
+                        <FiSearch className="cursor-pointer" />
+
+                    </div>
+                    <input className="w-full p-2 text-gray-500 outline-none" type="text" placeholder="Search product here..." />
+                    <HiOutlineShoppingBag className="text-blue-400 w-10 h-10 cursor-pointer" />
+
+                    <PiSignInFill className="text-blue-400 w-10 h-10 cursor-pointer" />
+                </div>
+
+
+
+
+
+
+
+
+
+
             </section>
         </>
     )
