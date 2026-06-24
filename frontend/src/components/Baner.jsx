@@ -2,9 +2,9 @@
 import image1d from '../assets/images/image1d.jpg'
 import image2d from '../assets/images/image2d.jpg'
 import image3d from '../assets/images/image3d.jpg'
+import image4d from '../assets/images/image4d.jpg'
 
-
-
+import imag5d from '../assets/images/imag5d.jpg'
 
 import image1m from '../assets/images/image1m.jpg'
 import image2m from '../assets/images/image2m.jpg'
@@ -17,7 +17,7 @@ import { useState, useEffect } from 'react'
 const Baner = () => {
 
 
-    const imgDesktop = [image2d, image1d, image3d];
+    const imgDesktop = [image2d, imag5d, image3d];
     const imgMobile = [image1m, image2m, image3m];
 
 
@@ -37,7 +37,7 @@ const Baner = () => {
     return (
 
 
-        <div className='containar mx-auto px-4 rounded'>
+        <div className='containar mx-auto  rounded'>
             <div className='h-56 md:h-90 w-full bg-slate-200'>
 
 

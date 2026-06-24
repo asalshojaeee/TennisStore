@@ -90,18 +90,9 @@ const Header = () => {
 
 
 
-
-
-
-
-
-
-
             </section>
 
-            <div className="banner">
-
-            </div>
+  
         </>
     )
 
