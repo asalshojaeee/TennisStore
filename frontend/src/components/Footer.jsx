@@ -12,59 +12,61 @@ const Footer = () => {
 
         <>
 
-            <footer>
+            <footer className="h-30 ">
 
 
-                <div className="w-full h-10 bg-white ">
-
-
-                    <div className="flex gap-50 justify-center items-center mt-5">
-
-
-                   
-                        <div>
-                            <img src={logo1} alt="" className="w-30 h-30" />
-
-                        </div>
-                        <div className="text-center">
-
-
-                            <h5 className="text-blue-400 text-lg p-2 font-semibold ">Shop</h5>
-                            <p className="text-green-500">Rackets</p>
-                            <p className="text-green-500">Tennis Balls</p>
-
-                            <p className="text-green-500">Shoes & Footwear</p>
-                        </div>
-                        <div className="text-center">
-
-
-                            <h5 className="text-blue-400 p-2 text-lg font-semibold">Support</h5>
-                            <p className="text-green-500">Rackets</p>
-                            <p className="text-green-500">Tennis Balls</p>
-
-                            <p className="text-green-500">Shoes & Footwear</p>
-                        </div>
-
-
+                <div className="flex justify-center items-center gap-50 m-10  ">
+                    <div>
+                        <img src={logo1} alt="" className="w-30 h-30" />
                     </div>
-                    <hr className="w-300 mx-auto text-blue-400 mt-10" />
-
-                    <div className="mt-10">
-                        <div className="text-slate-400 flex gap-4 text-center justify-start items-center">
-                            <span >© 2025 AceSport. All rights reserved.</span>
-                            <a href="#" >Privacy</a>
-                            <a href="#" >Terms</a>
-                            <a href="#" >Cookies</a>
-                        </div>
+                    <div className="text-slate-400 ">
+                        <h4 className="text-md text-blue-400 font-bold">SHOP</h4>
+                        <p>Rackets</p>
+                        <p>Tennis balls</p>
+                        <p>Shoes</p>
                     </div>
 
-                    <div className="flex flex-row p-5 gap-5">
-                        <MdOutlineMailOutline className="text-blue-400 text-lg" />
-                        <FaInstagram className="text-blue-400 text-lg" />
+                    <div className="text-slate-400 ">
+                        <h4 className="text-md text-blue-400 font-bold">SUPPORT</h4>
+                        <p>Contact Us</p>
+                        <p>Size Guide</p>
+                        <p>Racket Stringing
+                        </p>
 
-                        <FaXTwitter className="text-blue-400 text-lg" />
                     </div>
+
+
+
+
+
+
+
+
                 </div>
+                <hr className="w-200 mx-auto text-slate-300" />
+
+
+                <div className="flex justify-center items-center gap-10 mt-5 text-slate-300 p-5">
+                    <span >© 2025 AceSport. All rights reserved.</span>
+                    <a href="#" >Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Cookies</a>
+
+
+                    <div className="flex flex-row gap-5 ">
+                        <FaInstagram className="hover:text-slate-400 transition-all cursor-pointer"/>
+                        <FaXTwitter className="hover:text-slate-400 transition-all cursor-pointer"/>
+                        <MdOutlineMailOutline  className="hover:text-slate-400 transition-all cursor-pointer"/>
+
+                    </div>
+
+
+
+
+                </div>
+
+
+
 
             </footer>
 

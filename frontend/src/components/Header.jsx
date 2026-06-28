@@ -32,11 +32,11 @@ const Header = () => {
                         <FiSearch className="cursor-pointer" />
                     </div>
                     <input className="w-full  p-2  transition-all  text-gray-500 outline-none" type="text" placeholder="Search product here..." />
-                    <HiOutlineShoppingBag className="text-blue-400 w-10 h-10 cursor-pointer" />
+                    <HiOutlineShoppingBag className="text-blue-400 w-15 h-15 cursor-pointer" />
 
-                    <h6 className="">
-                        Sign in
-                    </h6>
+                    <button className="bg-blue-300 p-2 rounded-lg text-white cursor-pointer">
+                        Login
+                    </button>
                 </div>
 
 

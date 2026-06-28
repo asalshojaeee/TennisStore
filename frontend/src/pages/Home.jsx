@@ -20,7 +20,6 @@ const Home = () => {
     return (
         <>
 
-            {/* <TennisFooter /> */}
             <Baner />
 
 
@@ -37,7 +36,6 @@ const Home = () => {
             </div>
 
 
-            <Footer />
 
 
         </>
