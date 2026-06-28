@@ -34,9 +34,13 @@ const Header = () => {
                     <input className="w-full  p-2  transition-all  text-gray-500 outline-none" type="text" placeholder="Search product here..." />
                     <HiOutlineShoppingBag className="text-blue-400 w-15 h-15 cursor-pointer" />
 
-                    <button className="bg-blue-300 p-2 rounded-lg text-white cursor-pointer">
+                    <Link  to={'login'} className="bg-blue-300 p-2 rounded-lg text-white cursor-pointer"
+                    
+                    
+                    
+                >
                         Login
-                    </button>
+                    </Link>
                 </div>
 
 

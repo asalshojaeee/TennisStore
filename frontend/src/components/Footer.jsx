@@ -38,12 +38,20 @@ const Footer = () => {
 
 
 
+                    <div className="text-slate-400 ">
+                        <h4 className="text-md text-blue-400 font-bold">RESOURCES</h4>
+                        <p>Find a Store</p>
+                        <p>Become a Member</p>
+                        <p>Feedback
+                        </p>
+
+                    </div>
 
 
 
 
                 </div>
-                <hr className="w-200 mx-auto text-slate-300" />
+                <hr className="w-300 mx-auto text-slate-300" />
 
 
                 <div className="flex justify-center items-center gap-10 mt-5 text-slate-300 p-5">
