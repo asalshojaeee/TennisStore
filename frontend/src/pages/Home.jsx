@@ -20,8 +20,7 @@ const Home = () => {
     return (
         <>
 
-            <Header />
-            <TennisFooter />
+            {/* <TennisFooter /> */}
             <Baner />
 
 

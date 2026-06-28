@@ -15,18 +15,13 @@ const Footer = () => {
             <footer>
 
 
-                <div className="w-full h-30 bg-white ">
+                <div className="w-full h-10 bg-white ">
 
 
                     <div className="flex gap-50 justify-center items-center mt-5">
 
 
-                        <div className="flex flex-row p-5 gap-5">
-                            {/* <MdOutlineMailOutline className="text-blue-400 text-lg" />
-                            <FaInstagram className="text-blue-400 text-lg" />
-
-                            <FaXTwitter className="text-blue-400 text-lg" /> */}
-                        </div>
+                   
                         <div>
                             <img src={logo1} alt="" className="w-30 h-30" />
 
@@ -52,10 +47,10 @@ const Footer = () => {
 
 
                     </div>
-                    <hr className="w-300 mx-auto" />
+                    <hr className="w-300 mx-auto text-blue-400 mt-10" />
 
-                    <div>
-                        <div>
+                    <div className="mt-10">
+                        <div className="text-slate-400 flex gap-4 text-center justify-start items-center">
                             <span >© 2025 AceSport. All rights reserved.</span>
                             <a href="#" >Privacy</a>
                             <a href="#" >Terms</a>
