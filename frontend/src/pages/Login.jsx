@@ -13,7 +13,7 @@ const Login = () => {
         <>
 
             <div className="mt-10 ">
-                <div className="bg-blue-100 w-100 h-110 mx-auto p-5 rounded-lg">
+                <div className="bg-blue-200 w-100 h-110 mx-auto p-5 rounded-lg">
                     <img src={logo1} alt="" className="w-30 h-30 object-scale-down mix-blend-multiply mx-auto" />
                     <div className=" mt-3">
 
@@ -35,12 +35,12 @@ const Login = () => {
                                 </span>
 
                             </div>
-                            <button className="mt-5 cursor-pointer font-semibold text-blue-500">Login</button>
+                            <button className="mt-5 cursor-pointer font-semibold text-white">Login</button>
 
 
                         </form>
 
-                        <div className="mt-10 text-sm text-green-400" >
+                        <div className="mt-10 text-sm text-gray-400" >
                             <Link to={'/signup'} >Haven't account? SignUp</Link>
 
 
