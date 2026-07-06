@@ -26,221 +26,43 @@ const Header = () => {
                 </Link>
 
 
+                <div className="hidden md:flex z-40">
+                    <ul className="flex gap-5 text-green-600 font-bold">
 
-                <div className="hidden md:flex gap-5">
-                    <nav className="relative">
+                        <li className="relative group cursor-pointer list-none ">
+                            Men
 
-                        <div className="max-w-7xl mx-auto flex justify-center items-center gap-10 h-16">
+                            <ul className="absolute p-10 left-0   top-full hidden group-hover:block bg-white opacity-80 shadow-lg  rounded-md text-blue-400 font-medium">
+                                <Link className="m-3 ">Shoes</Link>
+                                <Link className="m-3 ">Clothes</Link>
+                                <Link className="m-3 ">Accessories</Link>
+                            </ul>
+                        </li>
 
-                            <div className="group">
-                                <div className="cursor-pointer font-semibold text-gray-800 hover:text-black h-16 flex items-center">
-                                    Men
-                                </div>
+                        <li className="relative group cursor-pointer list-none ">
+                            Women
 
-                                <div
-                                    className="
-        absolute
-        left-0
-        top-full
-        w-500
-        bg-white
-        shadow-xl
-        opacity-0
-        invisible
-        -translate-y-5
-        transition-all
-        duration-300
-        ease-out
-        group-hover:opacity-100
-        group-hover:visible
-        group-hover:translate-y-0
-        z-50
-      "
-                                >
-                                    <div className="max-w-7xl mx-auto grid grid-cols-4 gap-12 py-10">
+                            <ul className="absolute p-10 left-0   top-full hidden group-hover:block bg-white opacity-80 shadow-lg  rounded-md text-blue-400 font-medium">
+                                <Link className="m-3 ">Shoes</Link>
+                                <Link className="m-3 ">Clothes</Link>
+                                <Link className="m-3 ">Accessories</Link>
+                            </ul>
+                        </li>
+                        <li className="relative group cursor-pointer list-none ">
+                            Sport
 
-                                        <div>
-                                            <h3 className="font-bold mb-4">Shoes</h3>
+                            <ul className="absolute p-10 left-0   top-full hidden group-hover:block bg-white opacity-80 shadow-lg  rounded-md text-blue-400 font-medium">
+                                <Link className="m-3 ">Racket</Link>
+                                <Link className="m-3 ">Ball</Link>
+                                <Link className="m-3 ">Shoes</Link>
+                            </ul>
+                        </li>
 
-                                            <ul className="space-y-2 text-gray-500">
-                                                <li className="hover:text-black cursor-pointer">Running</li>
-                                                <li className="hover:text-black cursor-pointer">Basketball</li>
-                                                <li className="hover:text-black cursor-pointer">Lifestyle</li>
-                                                <li className="hover:text-black cursor-pointer">Training</li>
-                                            </ul>
-                                        </div>
-
-                                        <div>
-                                            <h3 className="font-bold mb-4">Clothing</h3>
-
-                                            <ul className="space-y-2 text-gray-500">
-                                                <li className="hover:text-black cursor-pointer">T-Shirts</li>
-                                                <li className="hover:text-black cursor-pointer">Hoodies</li>
-                                                <li className="hover:text-black cursor-pointer">Shorts</li>
-                                                <li className="hover:text-black cursor-pointer">Pants</li>
-                                            </ul>
-                                        </div>
-
-                                        <div>
-                                            <h3 className="font-bold mb-4">Accessories</h3>
-
-                                            <ul className="space-y-2 text-gray-500">
-                                                <li className="hover:text-black cursor-pointer">Bags</li>
-                                                <li className="hover:text-black cursor-pointer">Caps</li>
-                                                <li className="hover:text-black cursor-pointer">Socks</li>
-                                            </ul>
-                                        </div>
-
-                                        <div>
-                                            <h3 className="font-bold mb-4">Featured</h3>
-
-                                            <ul className="space-y-2 text-gray-500">
-                                                <li className="hover:text-black cursor-pointer">New Arrivals</li>
-                                                <li className="hover:text-black cursor-pointer">Best Sellers</li>
-                                                <li className="hover:text-black cursor-pointer">Sale</li>
-                                            </ul>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Women */}
-                            <div className="group">
-                                <div className="cursor-pointer font-semibold text-gray-800 hover:text-black h-16 flex items-center">
-                                    Women
-                                </div>
-
-                                <div
-                                    className="
-        absolute
-        left-0
-        top-full
-        w-full
-        bg-white
-        shadow-xl
-        opacity-0
-        invisible
-        -translate-y-5
-        transition-all
-        duration-300
-        ease-out
-        group-hover:opacity-100
-        group-hover:visible
-        group-hover:translate-y-0
-        z-50
-      "
-                                >
-                                    <div className="max-w-7xl mx-auto grid grid-cols-4 gap-12 py-10">
-
-                                        <div>
-                                            <h3 className="font-bold mb-4">Shoes</h3>
-                                            <ul className="space-y-2 text-gray-500">
-                                                <li className="hover:text-black">Running</li>
-                                                <li className="hover:text-black">Lifestyle</li>
-                                                <li className="hover:text-black">Training</li>
-                                            </ul>
-                                        </div>
-
-                                        <div>
-                                            <h3 className="font-bold mb-4">Clothing</h3>
-                                            <ul className="space-y-2 text-gray-500">
-                                                <li>Leggings</li>
-                                                <li>Jackets</li>
-                                                <li>Tops</li>
-                                            </ul>
-                                        </div>
-
-                                        <div>
-                                            <h3 className="font-bold mb-4">Accessories</h3>
-                                            <ul className="space-y-2 text-gray-500">
-                                                <li>Bags</li>
-                                                <li>Caps</li>
-                                            </ul>
-                                        </div>
-
-                                        <div>
-                                            <h3 className="font-bold mb-4">Featured</h3>
-                                            <ul className="space-y-2 text-gray-500">
-                                                <li>New</li>
-                                                <li>Trending</li>
-                                            </ul>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Sport */}
-                            <div className="group">
-                                <div className="cursor-pointer font-semibold text-gray-800 hover:text-black h-16 flex items-center">
-                                    Sport
-                                </div>
-
-                                <div
-                                    className="
-        absolute
-        left-0
-        top-full
-        w-full
-        bg-white
-        shadow-xl
-        opacity-0
-        invisible
-        -translate-y-5
-        transition-all
-        duration-300
-        ease-out
-        group-hover:opacity-100
-        group-hover:visible
-        group-hover:translate-y-0
-        z-50
-      "
-                                >
-                                    <div className="max-w-7xl mx-auto grid grid-cols-4 gap-12 py-10">
-
-                                        <div>
-                                            <h3 className="font-bold mb-4">Running</h3>
-                                            <ul className="space-y-2 text-gray-500">
-                                                <li>Running Shoes</li>
-                                                <li>Running Clothing</li>
-                                            </ul>
-                                        </div>
-
-                                        <div>
-                                            <h3 className="font-bold mb-4">Football</h3>
-                                            <ul className="space-y-2 text-gray-500">
-                                                <li>Boots</li>
-                                                <li>Jerseys</li>
-                                            </ul>
-                                        </div>
-
-                                        <div>
-                                            <h3 className="font-bold mb-4">Basketball</h3>
-                                            <ul className="space-y-2 text-gray-500">
-                                                <li>Shoes</li>
-                                                <li>Shorts</li>
-                                            </ul>
-                                        </div>
-
-                                        <div>
-                                            <h3 className="font-bold mb-4">Gym</h3>
-                                            <ul className="space-y-2 text-gray-500">
-                                                <li>Equipment</li>
-                                                <li>Training</li>
-                                            </ul>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </nav>
-
-
+                    </ul>
                 </div>
+
+
+
 
 
 

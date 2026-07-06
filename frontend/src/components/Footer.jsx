@@ -54,14 +54,14 @@ const Footer = () => {
                 <hr className="w-300 mx-auto text-slate-300" />
 
 
-                <div className="md:flex justify-center items-center gap-10 mt-5 text-slate-300 p-5">
+                <div className="md:flex justify-center items-center gap-10 mt-5 text-blue-300 p-5">
                     <span >© 2025 AceSport. All rights reserved.</span>
                     <a href="#" >Privacy</a>
                     <a href="#">Terms</a>
                     <a href="#">Cookies</a>
 
 
-                    <div className="md:flex flex-row gap-5 ">
+                    <div className="md:flex flex-row gap-5 text-slate-300">
                         <FaInstagram className="hover:text-slate-400 transition-all cursor-pointer"/>
                         <FaXTwitter className="hover:text-slate-400 transition-all cursor-pointer"/>
                         <MdOutlineMailOutline  className="hover:text-slate-400 transition-all cursor-pointer"/>

@@ -21,6 +21,6 @@ const mongooes = require('mongoose');
 
 
 
-const userModel = mongooes.schema("user",userSchema)
+const userModel = mongooes.schema("users",userSchema)
 
 module.exports = userModel
