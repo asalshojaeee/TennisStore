@@ -3,7 +3,7 @@
 const { model } = require('mongoose');
 const userModel = require('../models/users');
 
-
+const bcrypt = require('bcrypt');
 
 const signUp = async (req, res) => {
     try {
@@ -25,6 +25,26 @@ const signUp = async (req, res) => {
             throw new Error("Please provide name !")
 
         }
+        const hashPassword = await bcrypt.hash(password, 10);
+        if (!hashPassword) {
+            throw new Error("Something is wrong")
+        }
+
+        const payload = {
+            ...req.body,
+            role: "GENERAL",
+            password: hashPassword
+
+        }
+        const userData = new userModel(payload);
+        const saveUser = await userData.save();
+        res.status(201).json({
+            data: saveUser,
+            error: false,
+            success: true,
+            message: "User created successfuly!"
+
+        })
 
 
     }
