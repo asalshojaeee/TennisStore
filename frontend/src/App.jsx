@@ -7,7 +7,7 @@ import { BrowserRouter } from "react-router-dom"
 import Login from './pages/Login'
 import SignUp from "./pages/SignUp"
 
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from 'react-toastify';
 
 import "react-toastify/dist/ReactToastify.css";
 

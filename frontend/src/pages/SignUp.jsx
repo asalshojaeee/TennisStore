@@ -3,7 +3,7 @@
 
 import { VscEye } from "react-icons/vsc";
 import { VscEyeClosed } from "react-icons/vsc";
-
+import { ToastContainer, toast } from 'react-toastify';
 
 
 import { Link, useNavigate } from 'react-router-dom'
@@ -52,11 +52,20 @@ const SignUp = () => {
                 "http://localhost:3000/api/signup",
                 data
             );
+            if (response.data.success) {
+                toast.success(response.data.message)
+                navigate('/')
+
+            }
+            if (response.data.error) {
+                toast.error(response.data.message)
+            }
 
             console.log(response.data);
         } catch (error) {
             console.log(error.response?.data || error.message);
         }
+
     };
 
     return (
@@ -126,7 +135,7 @@ const SignUp = () => {
                         </form>
 
                         <div className='text-gray-400 mt-10 text-sm'>
-                            <Link to={'/login'} >Do you have already acoount? Login</Link>
+                            <Link to={'/login'} >Do you have already acount? Login</Link>
 
 
                         </div>
