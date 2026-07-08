@@ -14,15 +14,15 @@ const signUp = async (req, res) => {
             throw new Error("User already exists")
         }
         if (!email) {
-            throw new Error("Please provide email !")
+            throw new Error("Please provide email!")
 
         }
         if (!password) {
-            throw new Error("Please provide password !")
+            throw new Error("Please provide password!")
 
         }
         if (!name) {
-            throw new Error("Please provide name !")
+            throw new Error("Please provide name!")
 
         }
         const hashPassword = await bcrypt.hash(password, 10);

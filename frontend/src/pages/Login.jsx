@@ -46,7 +46,7 @@ const Login = () => {
         setData((preve => {
             return {
                 ...preve,
-                [name]:value
+                [name]: value
 
             }
 
@@ -91,8 +91,10 @@ const Login = () => {
                                 </span>
 
                             </div>
-                            <button className="mt-5 cursor-pointer font-semibold text-white">Login</button>
+                            <div className="text-center">
+                                <button className="mt-5 w-70   p-2 border-0 bg-blue-400 hover:shadow-2xl hover:shadow-amber-50 transition-all hover:translate-y-1 rounded-md cursor-pointer font-semibold text-white">LogIn</button>
 
+                            </div>
 
                         </form>
 

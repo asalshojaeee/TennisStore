@@ -71,7 +71,7 @@ const Header = () => {
                 <div className="flex justify-between  items-center px-17 gap-6 ">
                     <div className="hidden md:flex justify-between items-center border border-blue-100 rounded-xl gap-3 p-1">
                         <FiSearch className="cursor-pointer w-6 h-6 text-blue-300" />
-                        <input className="w-80  p-2 transition-all  text-gray-500 outline-none" type="text" placeholder="Search product ..." />
+                        <input className="w-80  p-2 transition-all  text-gray-500 outline-none " type="text" placeholder="Search product" />
                     </div>
 
                     <CiShoppingCart className="text-blue-400 w-8 h-8 cursor-pointer" />

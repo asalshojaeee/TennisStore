@@ -12,11 +12,11 @@ const signIn = async (req, res) => {
 
 
         if (!email) {
-            throw new Error("Please provide email !")
+            throw new Error("Please provide email!")
 
         }
         if (!password) {
-            throw new Error("Please provide password !")
+            throw new Error("Please provide password!")
 
         }
         const currentUser = await userModel.findOne({ email });

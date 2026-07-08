@@ -129,8 +129,10 @@ const SignUp = () => {
 
 
 
-                            <button className="mt-5 cursor-pointer font-semibold text-white">Sign Up</button>
+                            <div className="text-center">
+                                <button className="mt-5 w-70   p-2 border-0 bg-blue-400 hover:shadow-2xl hover:shadow-amber-50 transition-all hover:translate-y-1 rounded-md cursor-pointer font-semibold text-white">SignUp</button>
 
+                            </div>
 
                         </form>
 
