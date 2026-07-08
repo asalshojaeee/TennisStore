@@ -3,9 +3,10 @@ import Home from "./pages/Home"
 import { Route, Routes } from "react-router-dom"
 import Layout from "./helpers/Layout"
 import { BrowserRouter } from "react-router-dom"
-
+import { store } from "./store/store"
 import Login from './pages/Login'
 import SignUp from "./pages/SignUp"
+
 
 import { ToastContainer, toast } from 'react-toastify';
 
