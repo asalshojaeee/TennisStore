@@ -85,10 +85,12 @@ const Header = () => {
                         <FiSearch className="cursor-pointer w-6 h-6 text-blue-300" />
                         <input className="w-80  p-2 transition-all  text-gray-500 outline-none " type="text" placeholder="Search product" />
                     </div>
-
-                    <CiShoppingCart className="text-blue-400 w-8 h-8 cursor-pointer" />
                     {
-                        user?._id ? (<button onClick={handleLogOut} className="bg-red-500 p-2 rounded-lg text-white cursor-pointer"
+                        user?._id && (<CiShoppingCart className="text-blue-400 w-8 h-8 cursor-pointer" />
+                        )
+                    }
+                    {
+                        user?._id ? (<button onClick={handleLogOut} className="bg-red-500 p-2 hover:translate-y-0.5 transition-all rounded-lg text-white cursor-pointer"
                         >
                             LogOut
                         </button>) :

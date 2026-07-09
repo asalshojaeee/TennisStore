@@ -42,7 +42,7 @@ const signUp = async (req, res) => {
             data: saveUser,
             error: false,
             success: true,
-            message: "User created successfully!"
+            message: "Account created successfully!"
 
         })
 
