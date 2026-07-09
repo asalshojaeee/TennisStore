@@ -12,7 +12,6 @@ import image3m from '../assets/images/image3m.jpg'
 import model2 from '../assets/images/model2.jpg'
 import model6 from '../assets/images/model6.jpg'
 import Footer from "../components/Footer"
-import TennisFooter from "../components/TennisFooter"
 
 const Home = () => {
 
