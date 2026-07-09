@@ -6,9 +6,13 @@ import logo1 from '../assets/logo/logo1.jpg'
 import { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { useDispatch } from "react-redux";
+import { setUserDetails } from "../store/userSlice";
 const Login = () => {
 
     const navigate = useNavigate()
+
+    const dispatch = useDispatch()
 
     const [showPassword, setShowPassword] = useState(false);
 
@@ -22,9 +26,9 @@ const Login = () => {
         e.preventDefault();
         try {
             const dataResponse = await axios.post("http://localhost:3000/api/login", data)
-
-
             if (dataResponse.data.success) {
+
+                dispatch(setUserDetails(dataResponse.data.data))
                 toast.success(dataResponse.data.message)
                 navigate('/')
 

@@ -3,17 +3,29 @@ import { FiSearch } from "react-icons/fi";
 import { PiSignInFill } from "react-icons/pi";
 import { IoMenuOutline } from "react-icons/io5";
 import { CiShoppingCart } from "react-icons/ci";
-
-import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { data, Link, useNavigate } from 'react-router-dom'
 import logo1 from '../assets/logo/logo1.jpg'
 import { GiTennisRacket } from "react-icons/gi";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
-
-
+import axios from 'axios'
+import { setUserDetails } from "../store/userSlice";
+import { use } from "react";
 const Header = () => {
-    const handleMenu = () => {
+    const user = useSelector(state => state?.user?.user)
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
 
-    }
+
+
+    const handleLogOut = async () => {
+        const response = await axios.get("http://localhost:3000/api/logout");
+
+        if (response.data.success) {
+            dispatch(setUserDetails(null));
+            navigate("/");
+        }
+    };
 
     return (
         <>
@@ -75,15 +87,23 @@ const Header = () => {
                     </div>
 
                     <CiShoppingCart className="text-blue-400 w-8 h-8 cursor-pointer" />
+                    {
+                        user?._id ? (<button onClick={handleLogOut} className="bg-red-500 p-2 rounded-lg text-white cursor-pointer"
+                        >
+                            LogOut
+                        </button>) :
 
-                    <Link to={'login'} className="bg-blue-300 p-2 rounded-lg text-white cursor-pointer"
-                    >
-                        Login
-                    </Link>
+                            (<Link to={'/login'} className="bg-blue-300 p-2 rounded-lg text-white cursor-pointer"
+                            >
+                                Login
+                            </Link>)
+
+                    }
+
 
 
                     <div className="md:hidden"
-                        onClick={handleMenu}
+                    // onClick={handleMenu}
                     >
                         <IoMenuOutline className="w-10 h-10" />
 
