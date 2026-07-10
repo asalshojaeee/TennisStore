@@ -1,6 +1,7 @@
 
 import { FiSearch } from "react-icons/fi";
 import { PiSignInFill } from "react-icons/pi";
+import { CiUser } from "react-icons/ci";
 import { IoMenuOutline } from "react-icons/io5";
 import { CiShoppingCart } from "react-icons/ci";
 import { useDispatch, useSelector } from 'react-redux'
@@ -39,7 +40,7 @@ const Header = () => {
 
 
                 <div className="hidden md:flex z-40">
-                    <ul className="flex gap-5 text-green-600 font-bold">
+                    <ul className="flex gap-5 text-blue-500 font-bold">
 
                         <li className="relative group cursor-pointer list-none ">
                             Men
@@ -80,15 +81,21 @@ const Header = () => {
 
 
 
-                <div className="flex justify-between  items-center px-17 gap-6 ">
+                <div className="flex justify-between  items-center px-17 gap-7 ">
                     <div className="hidden md:flex justify-between items-center border border-blue-100 rounded-xl gap-3 p-1">
                         <FiSearch className="cursor-pointer w-6 h-6 text-blue-300" />
                         <input className="w-80  p-2 transition-all  text-gray-500 outline-none " type="text" placeholder="Search product" />
                     </div>
-                    {
-                        user?._id && (<CiShoppingCart className="text-blue-400 w-8 h-8 cursor-pointer" />
-                        )
-                    }
+
+                    <div className="flex justify-center items-center">
+                        {/* <CiUser className="w-6 h-6 cursor-pointer text-blue-400" /> */}
+                        {
+                            user?._id && (<CiShoppingCart className="text-blue-400 w-8 h-8 cursor-pointer" />
+                            )
+                        }
+                    </div>
+
+
                     {
                         user?._id ? (<button onClick={handleLogOut} className="bg-red-500 p-2 hover:translate-y-0.5 transition-all rounded-lg text-white cursor-pointer"
                         >

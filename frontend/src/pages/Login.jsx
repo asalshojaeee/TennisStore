@@ -25,7 +25,9 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const dataResponse = await axios.post("http://localhost:3000/api/login", data)
+            const dataResponse = await axios.post("http://localhost:3000/api/login", data, {
+                withCredentials: true
+            })
             if (dataResponse.data.success) {
 
                 dispatch(setUserDetails(dataResponse.data.data))
