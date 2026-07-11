@@ -90,7 +90,15 @@ const Header = () => {
                     </div>
 
                     <div className="flex justify-center items-center">
-                        {/* <CiUser className="w-6 h-6 cursor-pointer text-blue-400" /> */}
+
+                        {
+                            user?.role === "ADMIN" && (
+                                <Link to={'/'}> 
+                                    <CiUser className="w-6 h-6 cursor-pointer text-blue-400" />
+                                </Link>
+
+                            )
+                        }
                         {
                             user?._id && (<CiShoppingCart className="text-blue-400 w-8 h-8 cursor-pointer" />
                             )
