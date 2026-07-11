@@ -20,7 +20,9 @@ const Header = () => {
 
 
     const handleLogOut = async () => {
-        const response = await axios.get("http://localhost:3000/api/logout");
+        const response = await axios.get("http://localhost:3000/api/logout", {
+            withCredentials: true
+        })
 
         if (response.data.success) {
             dispatch(setUserDetails(null));
