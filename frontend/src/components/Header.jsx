@@ -93,7 +93,7 @@ const Header = () => {
 
                         {
                             user?.role === "ADMIN" && (
-                                <Link to={'/'}> 
+                                <Link to={'/adminpanel'}> 
                                     <CiUser className="w-6 h-6 cursor-pointer text-blue-400" />
                                 </Link>
 

@@ -15,6 +15,9 @@ import { useEffect } from "react"
 import axios from "axios"
 import { useDispatch } from "react-redux"
 import { setUserDetails } from "./store/userSlice"
+import AdminPanel from './pages/AdminPanel'
+
+
 
 function App() {
 
@@ -55,13 +58,14 @@ function App() {
 
             <Route path="/" element={<Home />} />
 
+
           </Route>
         </Route>
 
 
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
-
+        <Route path="adminpanel" element={<AdminPanel />} />
 
       </Routes>
 
