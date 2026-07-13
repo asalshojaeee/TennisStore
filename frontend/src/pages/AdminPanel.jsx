@@ -3,13 +3,20 @@ import axios from 'axios'
 
 import { useSelector } from 'react-redux'
 import React, { use, useEffect, useState } from 'react'
-import { Link, Outlet, useNavigate } from 'react-router-dom'
+import { Form, Link, Outlet, useNavigate } from 'react-router-dom'
 import { IoCloudUploadOutline } from "react-icons/io5";
 import productCategory from '../helpers/productCategory'
 export const AdminPanel = () => {
+    const [image, setImage] = useState(null)
+    const [data, setData] = useState({
+        productName: "",
+        price: "",
+        brandName: "",
+        sellingPrice: "",
+        category: "",
+        description: "",
+        productImage: []
 
-    const [data,setData]=useState({
-        
     })
 
     const user = useSelector(state => state?.user.user)
@@ -26,6 +33,13 @@ export const AdminPanel = () => {
 
     const handleOnChange = (e) => {
         const { name, value } = e.target;
+        setData((preve) => {
+            return {
+                ...preve,
+                [name]: value
+            }
+        })
+
 
 
     }
@@ -37,7 +51,32 @@ export const AdminPanel = () => {
         })
 
     }
-    const handleUploadProduct = () => {
+    const handleUploadProduct = async (e) => {
+        const file = e.target.files[0];
+        const formData = new FormData();
+        try {
+            formData.append("image", file)
+            const res = await axios.post("http://localhost:3000/api/upload", formData)
+
+            setImage(res.data.imageUrl)
+
+
+            setData((preve) => {
+                return {
+                    ...preve,
+                    productImage: [
+                        ...preve.productImage,
+                        res.data.imageUrl
+
+                    ]
+                }
+            })
+
+        }
+        catch (err){
+            console.log(err)
+
+        }
 
     }
 
@@ -59,12 +98,19 @@ export const AdminPanel = () => {
                 <div className='mt-10 flex gap-20 text-slate-400'>
                     <form action="" className='flex flex-col gap-5 p-5' onSubmit={handleSubmit}>
                         <label htmlFor="productName">Name:</label>
-                        <input id="productName" className='bg-slate-100 opacity-55 h-10 rounded-sm w-100' type="text" placeholder="" />
+                        <input
+                            name='productName'
+                            value={data.productName}
+                            onChange={handleOnChange}
+                            id="productName" className='bg-slate-100 opacity-55 h-10 rounded-sm w-100' type="text" placeholder="" />
 
 
 
                         <label htmlFor="category">Category:</label>
-                        <select name="" id="category" className='text-slate-400'>
+                        <select
+                            value={data.category}
+                            onChange={handleOnChange}
+                            name="category" id="category" className='text-slate-400'>
 
 
                             <option>Select Category</option>
@@ -77,16 +123,32 @@ export const AdminPanel = () => {
                         </select>
 
                         <label htmlFor="price">Price:</label>
-                        <input id="price" className='bg-slate-100 opacity-55 h-10 rounded-sm w-100' type="text" placeholder="" />
+                        <input
+                            name='price'
+                            onChange={handleOnChange}
+                            value={data.price}
+                            id="price" className='bg-slate-100 opacity-55 h-10 rounded-sm w-100' type="text" placeholder="" />
 
                         <label htmlFor="brandName">BrandName:</label>
-                        <input id="brandName" className='bg-slate-100 opacity-55 h-10 rounded-sm w-100' type="text" placeholder="" />
+                        <input
+                            name='brandName'
+                            onChange={handleOnChange}
+                            value={data.brandName}
+
+                            id="brandName" className='bg-slate-100 opacity-55 h-10 rounded-sm w-100' type="text" placeholder="" />
 
                         <label htmlFor="sellingPrice">SellingPrice:</label>
-                        <input id="sellingPrice" className='bg-slate-100 opacity-55 h-10 rounded-sm w-100' type="text" placeholder="" />
+                        <input
+                            onChange={handleOnChange}
+                            value={data.sellingPrice}
+                            name='sellingPrice'
+                            id="sellingPrice" className='bg-slate-100 opacity-55 h-10 rounded-sm w-100' type="text" placeholder="" />
 
                         <label htmlFor="description">Description:</label>
-                        <textarea name="" className='bg-slate-100 opacity-55 h-10 rounded-sm w-100' id="description" cols='9' rows={7}></textarea>
+                        <textarea
+                            value={data.description}
+                            onChange={handleOnChange}
+                            name="description" className='bg-slate-100 opacity-55 h-10 rounded-sm w-100' id="description" cols='9' rows={7}></textarea>
 
 
                         <label htmlFor="uploadImageInput">
@@ -106,6 +168,7 @@ export const AdminPanel = () => {
 
                             </div>
                         </label>
+                    <button className="px-3 py-1 bg-orange-400 text-white mb-5 hover:bg-orangeProduc-400">Upload t</button>
 
                     </form>
                 </div>
