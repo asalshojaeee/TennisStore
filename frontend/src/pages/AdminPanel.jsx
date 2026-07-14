@@ -1,5 +1,6 @@
 
 import axios from 'axios'
+import { toast } from "react-toastify";
 
 import { useSelector } from 'react-redux'
 import React, { use, useEffect, useState } from 'react'
@@ -43,12 +44,17 @@ export const AdminPanel = () => {
 
 
     }
-    const handleSubmit = async () => {
+    const handleSubmit = async (e) => {
+        e.preventdefault()
 
 
         const responseData = await axios.post("http://localhost:3000/api/uploadproduct", data, {
             withCredentials: true
         })
+
+        if (responseData.success) {
+            toast.success(responseData.message)
+        }
 
     }
     const handleUploadProduct = async (e) => {
@@ -57,6 +63,7 @@ export const AdminPanel = () => {
         try {
             formData.append("image", file)
             const res = await axios.post("http://localhost:3000/api/upload", formData)
+
 
             setImage(res.data.imageUrl)
 
@@ -72,8 +79,10 @@ export const AdminPanel = () => {
                 }
             })
 
+
+
         }
-        catch (err){
+        catch (err) {
             console.log(err)
 
         }
@@ -168,9 +177,10 @@ export const AdminPanel = () => {
 
                             </div>
                         </label>
-                    <button className="px-3 py-1 bg-orange-400 text-white mb-5 hover:bg-orangeProduc-400">Upload t</button>
+                        <button className="px-3 py-1 bg-orange-400 text-white mb-5 hover:bg-orangeProduc-400">Upload t</button>
 
                     </form>
+
                 </div>
 
             </main>

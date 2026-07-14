@@ -35,11 +35,13 @@ const upload = multer({ storage });
 
 app.post("/api/upload", upload.single("image"), (req, res) => {
 
-    const imageUrl = `http://localhost:3000/uploads/${req.file.filename}`;
+  const imageUrl = `http://localhost:3000/uploads/${req.file.filename}`;
 
-    res.json({
-        imageUrl
-    });
+  res.json({
+    success: true,
+    error: false,
+    imageUrl
+  });
 
 });
 app.use("/uploads", express.static("uploads"));

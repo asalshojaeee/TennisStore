@@ -12,10 +12,10 @@ const uploadProduct = async (req, res) => {
         const uploadPro = await productModel(req.body);
         const saveProduct = await uploadPro.save()
         res.status(201).json({
-            message: "Product uploaded successfully",
             success: true,
             error: false,
-            data: saveProduct
+            data: saveProduct,
+            message: "Product uploaded successfully"
 
         })
 
