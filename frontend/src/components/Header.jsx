@@ -1,4 +1,4 @@
-
+import gsap from 'gsap'
 import { FiSearch } from "react-icons/fi";
 import { PiSignInFill } from "react-icons/pi";
 import { CiUser } from "react-icons/ci";

@@ -45,16 +45,25 @@ export const AdminPanel = () => {
 
     }
     const handleSubmit = async (e) => {
-        e.preventdefault()
+        e.preventDefault()
+
+        try {
+            const responseData = await axios.post("http://localhost:3000/api/uploadproduct", data, {
+                withCredentials: true
+            })
 
 
-        const responseData = await axios.post("http://localhost:3000/api/uploadproduct", data, {
-            withCredentials: true
-        })
-
-        if (responseData.success) {
-            toast.success(responseData.message)
+            if(responseData.data.success){
+                toast.success(responseData.data.message)
+            }
         }
+        catch (err) {
+            throw new Error("Some error when uploading product!")
+
+        }
+
+
+
 
     }
     const handleUploadProduct = async (e) => {
@@ -97,10 +106,10 @@ export const AdminPanel = () => {
             <main className='flex gap-5  bg-blue-100'>
                 <div className='h-screen w-50 bg-blue-300'>
                     <h1 className='text-white font-bold text-center p-5'>{user?.name}</h1>
-                    <p className='text-green-100 text-center'>{user?.role}</p>
+                    <p className='text-green-100 text-center font-bold'>{user?.role}</p>
                     <div className='flex justify-center items-center flex-col mt-100 gap-6'>
-                        <Link className='text-green-100'>All User</Link>
-                        <Link className='text-green-100'>All Product</Link>
+                        <Link className='text-green-100 font-bold'>All User</Link>
+                        <Link className='text-green-100 font-bold'>All Product</Link>
                     </div>
 
                 </div>
@@ -177,7 +186,7 @@ export const AdminPanel = () => {
 
                             </div>
                         </label>
-                        <button className="px-3 py-1 bg-orange-400 text-white mb-5 hover:bg-orangeProduc-400">Upload t</button>
+                        <button className="px-3 py-1 bg-orange-400 text-white mb-5 rounded-md hover:bg-orange-300">Upload product</button>
 
                     </form>
 
