@@ -1,4 +1,3 @@
-***This project is developing.
 1.Install all libraries and packages with command: npm i
 2.Go to backend folder and run this command: npm run dev
 3.Go to frontend folder and run this command: npm run dev
