@@ -16,6 +16,7 @@ import axios from "axios"
 import { useDispatch } from "react-redux"
 import { setUserDetails } from "./store/userSlice"
 import AdminPanel from './pages/AdminPanel'
+import Shoes from "./pages/Shoes"
 
 
 
@@ -57,6 +58,7 @@ function App() {
           <Route element={<Layout />}>
 
             <Route path="/" element={<Home />} />
+            <Route path='/sneakers' element={<Shoes/>}/>
 
 
           </Route>

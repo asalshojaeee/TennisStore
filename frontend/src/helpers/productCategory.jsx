@@ -10,8 +10,8 @@ const productCategory = [
         lable: "Racket"
     },{
         id: 2,
-        value: "shoe",
-        lable: "Shoes"
+        value: "sneakers",
+        lable: "Sneakers"
     },
     , {
         id: 3,

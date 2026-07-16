@@ -48,7 +48,7 @@ const Header = () => {
                             Men
 
                             <ul className="absolute p-10 left-0   top-full hidden group-hover:block bg-white opacity-80 shadow-lg  rounded-md text-blue-400 font-medium">
-                                <Link className="m-3 ">Shoes</Link>
+                                <Link className="m-3 " to={'/sneakers'}>Sneakers</Link>
                                 <Link className="m-3 ">Clothes</Link>
                                 <Link className="m-3 ">Accessories</Link>
                             </ul>
@@ -58,7 +58,7 @@ const Header = () => {
                             Women
 
                             <ul className="absolute p-10 left-0   top-full hidden group-hover:block bg-white opacity-80 shadow-lg  rounded-md text-blue-400 font-medium">
-                                <Link className="m-3 ">Shoes</Link>
+                                <Link className="m-3 " to={'/sneakers'}>Sneakers</Link>
                                 <Link className="m-3 ">Clothes</Link>
                                 <Link className="m-3 ">Accessories</Link>
                             </ul>
@@ -69,7 +69,7 @@ const Header = () => {
                             <ul className="absolute p-10 left-0   top-full hidden group-hover:block bg-white opacity-80 shadow-lg  rounded-md text-blue-400 font-medium">
                                 <Link className="m-3 ">Racket</Link>
                                 <Link className="m-3 ">Ball</Link>
-                                <Link className="m-3 ">Shoes</Link>
+                                <Link className="m-3 " to={'/sneakers'}>Sneakers</Link>
                             </ul>
                         </li>
 
