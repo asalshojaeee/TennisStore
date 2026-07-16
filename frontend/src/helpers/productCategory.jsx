@@ -8,27 +8,23 @@ const productCategory = [
         id: 1,
         value: "racket",
         lable: "Racket"
-    }, {
+    },{
         id: 2,
-        value: "menShoe",
-        lable: "MenShoe"
-    }, {
-        id: 3,
-        value: "womenShoe",
-        lable: "WomenShoe"
+        value: "shoe",
+        lable: "Shoes"
     },
     , {
-        id: 4,
+        id: 3,
         value: "womenClothes",
         lable: "WomenClothes"
     },
     , {
-        id: 5,
+        id: 4,
         value: "menClothes",
         lable: "MenClothes"
     },
     {
-        id: 6,
+        id: 5,
         value: "ball",
         lable: "Ball"
     },

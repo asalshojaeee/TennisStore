@@ -53,7 +53,16 @@ export const AdminPanel = () => {
             })
 
 
-            if(responseData.data.success){
+            if (responseData.data.success) {
+                setData({
+                    productName: "",
+                    price: "",
+                    brandName: "",
+                    sellingPrice: "",
+                    category: "",
+                    description: "",
+                    productImage: []
+                })
                 toast.success(responseData.data.message)
             }
         }
