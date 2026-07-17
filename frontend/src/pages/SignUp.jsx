@@ -137,7 +137,7 @@ const SignUp = () => {
                         </form>
 
                         <div className='text-gray-400 mt-10 text-sm'>
-                            <Link to={'/login'} >Do you have already acount? Login</Link>
+                            <Link to={'/login'} >Do you already have an account? Login</Link>
 
 
                         </div>

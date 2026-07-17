@@ -29,7 +29,7 @@ const Shoes = () => {
                 {
                     products.map((pro, index) => {
                         return (
-                            <div key={index} className='cart-body h-full w-full border border-slate-200 p-5 rounded-xl'>
+                            <div key={index} className='cart-body h-full w-full flex-col  shadow-sm p-5 rounded-xl'>
                                     <img
 
                                         src={pro.productImage[currentImage[pro._id] || 0]}
@@ -55,13 +55,13 @@ const Shoes = () => {
                                         <p className='text-blue-400 font-bold'>{pro?.brandName}</p>
                                         <p className='text-blue-300 font-medium'>{pro?.price}</p>
 
-                                        <div className='flex items-center justify-center gap-3 mt-4'>
-                                            <div className='bg-blue-200 text-white rounded-md  cursor-pointer' onClick>37</div>
-                                            <div className='bg-blue-200 text-white rounded-md  cursor-pointer' onClick>38</div>
-                                            <div className='bg-blue-200 text-white rounded-md cursor-pointer' onClick>40</div>
-                                            <div className='bg-blue-200 text-white rounded-md cursor-pointer' onClick>42</div>
-                                            <div className='bg-blue-200 text-white rounded-md  cursor-pointer' onClick>45</div>
-                                            <div className='bg-blue-200 text-white rounded-md cursor-pointer' onClick>47</div>
+                                        <div className='mt-4 gap-3 flex'>
+                                            <div className='bg-blue-200 text-white rounded-md w-7 text-center  cursor-pointer' onClick>37</div>
+                                            <div className='bg-blue-200 text-white rounded-md w-7 text-center  cursor-pointer' onClick>38</div>
+                                            <div className='bg-blue-200 text-white rounded-md w-7 text-center cursor-pointer' onClick>40</div>
+                                            <div className='bg-blue-200 text-white rounded-md w-7 text-center cursor-pointer' onClick>42</div>
+                                            <div className='bg-blue-200 text-white rounded-md w-7 text-center cursor-pointer' onClick>45</div>
+                                            <div className='bg-blue-200 text-white rounded-md w-7 text-center cursor-pointer' onClick>47</div>
                                         </div>
                                         <div className='text-center mt-6'>
                                             <button className='bg-blue-400 w-full hover:translate-y-1 transition-all text-white p-2 rounded-md'>Add to cart</button>

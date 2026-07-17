@@ -105,7 +105,7 @@ const Login = () => {
                         </form>
 
                         <div className="mt-10 text-sm text-gray-400" >
-                            <Link to={'/signup'} >Haven't account? SignUp</Link>
+                            <Link to={'/signup'} >Don't have an account? SignUp</Link>
 
 
                         </div>
