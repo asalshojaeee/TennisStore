@@ -2,7 +2,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { useEffect } from 'react';
-
+import displayCurrency from '../helpers/displayCurrency';
 const Shoes = () => {
 
     const [products, setProducts] = useState([])
@@ -35,10 +35,8 @@ const Shoes = () => {
                                     key={index}
                                     className="cart-body h-full w-full flex-col  shadow-sm p-5 rounded-xl animate-pulse"
                                 >
-                                    {/* Image */}
                                     <div className="h-56 w-full rounded bg-gray-300"></div>
 
-                                    {/* Image dots */}
                                     <div className="flex justify-center gap-2 mt-3">
                                         {[...Array(3)].map((_, i) => (
                                             <div
@@ -48,13 +46,10 @@ const Shoes = () => {
                                         ))}
                                     </div>
 
-                                    {/* Brand */}
                                     <div className="h-5 w-24 bg-gray-300 rounded mt-4"></div>
 
-                                    {/* Price */}
                                     <div className="h-5 w-16 bg-gray-300 rounded mt-3"></div>
 
-                                    {/* Sizes */}
                                     <div className="mt-4 gap-3 flex flex-wrap">
                                         {[...Array(6)].map((_, i) => (
                                             <div
@@ -64,7 +59,6 @@ const Shoes = () => {
                                         ))}
                                     </div>
 
-                                    {/* Button */}
                                     <div className="mt-6">
                                         <div className="h-10 w-full rounded-md bg-gray-300"></div>
                                     </div>
@@ -100,7 +94,7 @@ const Shoes = () => {
                                         ))}
                                     </div>
                                     <p className='text-blue-400 font-bold'>{pro?.brandName}</p>
-                                    <p className='text-blue-300 font-medium'>{pro?.price}</p>
+                                    <p className='text-blue-300 font-medium'>{displayCurrency(pro?.price)}</p>
 
                                     <div className='mt-4 gap-3 flex'>
                                         <div className='bg-blue-200 text-white rounded-md w-7 text-center  cursor-pointer' onClick>37</div>
