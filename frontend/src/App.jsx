@@ -6,7 +6,7 @@ import { BrowserRouter } from "react-router-dom"
 import store from "./store/store"
 import Login from './pages/Login'
 import SignUp from "./pages/SignUp"
-
+import Ball from "./pages/Ball"
 
 import { ToastContainer, toast } from 'react-toastify';
 
@@ -17,6 +17,7 @@ import { useDispatch } from "react-redux"
 import { setUserDetails } from "./store/userSlice"
 import AdminPanel from './pages/AdminPanel'
 import Shoes from "./pages/Shoes"
+import Racket from "./pages/Racket"
 
 
 
@@ -59,6 +60,8 @@ function App() {
 
             <Route path="/" element={<Home />} />
             <Route path='/sneakers' element={<Shoes/>}/>
+            <Route path="/balls" element={<Ball/>}/>
+            <Route path="/rackets" element={<Racket/>}/>
 
 
           </Route>

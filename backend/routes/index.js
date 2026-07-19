@@ -8,8 +8,9 @@ const userDetails = require('../controller/userdetails');
 const authorization = require('../middleware/authorization');
 const uploadProduct = require('../controller/uploadProduct');
 const sneakersProduct = require('../controller/sneakersProduct');
+const getBallProduct = require('../controller/getBallProduct');
 
-
+const getRacketProducts = require('../controller/getRacketProducts')
 const router = express.Router();
 
 router.post('/signup', signUp);
@@ -17,8 +18,10 @@ router.post('/login', signIn);
 
 router.get('/logout', userLogOut);
 
-router.get('/userdetail', authorization,userDetails);
-router.post('/uploadproduct',authorization,uploadProduct);
-router.get('/getsneakersproduct',sneakersProduct)
+router.get('/userdetail', authorization, userDetails);
+router.post('/uploadproduct', authorization, uploadProduct);
+router.get('/getsneakersproduct', sneakersProduct)
+router.get('/getballproduct', getBallProduct)
+router.get('/getracketproduct', getRacketProducts)
 
 module.exports = router
