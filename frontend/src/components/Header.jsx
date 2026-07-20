@@ -49,7 +49,7 @@ const Header = () => {
 
                             <ul className="absolute p-10 left-0   top-full hidden group-hover:block bg-white opacity-80 shadow-lg  rounded-md text-blue-400 font-medium">
                                 <Link className="m-3 " to={'/sneakers'}>Sneakers</Link>
-                                <Link className="m-3 ">Clothes</Link>
+                                <Link className="m-3 " to={'/menclothe'}>Clothes</Link>
                                 <Link className="m-3 ">Accessories</Link>
                             </ul>
                         </li>

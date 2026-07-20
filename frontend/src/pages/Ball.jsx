@@ -96,7 +96,9 @@ const Ball = () => {
                         />
                       ))}
                     </div>
-                    <p className='text-blue-400 font-bold'>{pro?.brandName}</p>
+                    <p className='text-gray-400 font-medium'>{pro?.productName}</p>
+
+                    <p className='text-blue-400 font-medium'>Brand: {pro?.brandName}</p>
                     <p className='text-blue-300 font-medium'>{displayCurrency(pro?.price)}</p>
 
 

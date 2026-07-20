@@ -18,6 +18,7 @@ import { setUserDetails } from "./store/userSlice"
 import AdminPanel from './pages/AdminPanel'
 import Shoes from "./pages/Shoes"
 import Racket from "./pages/Racket"
+import MenClothes from "./pages/MenClothes"
 
 
 
@@ -62,6 +63,7 @@ function App() {
             <Route path='/sneakers' element={<Shoes/>}/>
             <Route path="/balls" element={<Ball/>}/>
             <Route path="/rackets" element={<Racket/>}/>
+            <Route path="/menclothe" element={<MenClothes/>}/>
 
 
           </Route>

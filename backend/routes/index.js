@@ -10,7 +10,8 @@ const uploadProduct = require('../controller/uploadProduct');
 const sneakersProduct = require('../controller/sneakersProduct');
 const getBallProduct = require('../controller/getBallProduct');
 
-const getRacketProducts = require('../controller/getRacketProducts')
+const getRacketProducts = require('../controller/getRacketProducts');
+const menClothes = require('../controller/getMenClothes');
 const router = express.Router();
 
 router.post('/signup', signUp);
@@ -23,5 +24,6 @@ router.post('/uploadproduct', authorization, uploadProduct);
 router.get('/getsneakersproduct', sneakersProduct)
 router.get('/getballproduct', getBallProduct)
 router.get('/getracketproduct', getRacketProducts)
+router.get('/getmenclothes', menClothes)
 
 module.exports = router
