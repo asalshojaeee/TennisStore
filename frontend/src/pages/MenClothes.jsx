@@ -98,7 +98,13 @@ const MenClothes = () => {
                   <p className='text-blue-400 font-medium'>Brand: {pro?.brandName}</p>
                   <p className='text-blue-300 font-medium'>{displayCurrency(pro?.price)}</p>
 
+                  <ul className='list-none flex text-center gap-1'>
+                    <li className='border border-blue-300 text-gray-400 rounded-sm w-10 hover:border-2 translate-y-0.5 cursor-pointer'>Md</li>
+                    <li className='border border-blue-300 text-gray-400 rounded-sm w-10 hover:border-2 translate-y-0.5 cursor-pointer' >Lg</li>
+                    <li className='border border-blue-300 text-gray-400 rounded-sm w-10 hover:border-2 translate-y-0.5 cursor-pointer'>Xlg</li>
 
+                    <li className='border border-blue-300 text-gray-400 rounded-sm w-10 hover:border-2 translate-y-0.5 cursor-pointer'>3XL</li>
+                  </ul>
                   <div className='text-center mt-6'>
                     <button className='bg-blue-400 w-full hover:translate-y-1 transition-all text-white p-2 rounded-md'>Add to cart</button>
 
