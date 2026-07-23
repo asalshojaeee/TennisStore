@@ -28,6 +28,11 @@ const productCategory = [
         value: "ball",
         lable: "Ball"
     },
+        {
+        id: 6,
+        value: "accessory",
+        lable: "Accessory"
+    }
 
 ]
 

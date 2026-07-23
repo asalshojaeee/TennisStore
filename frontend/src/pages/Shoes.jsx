@@ -2,7 +2,8 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { useEffect } from 'react';
-import displayCurrency from '../helpers/displayCurrency';
+import displayCurrency from '../helpers/displayCurrency'
+
 const Shoes = () => {
 
     const [products, setProducts] = useState([])

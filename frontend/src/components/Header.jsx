@@ -12,6 +12,8 @@ import { HiOutlineShoppingBag } from "react-icons/hi2";
 import axios from 'axios'
 import { setUserDetails } from "../store/userSlice";
 import { use } from "react";
+import { MdNavigateNext } from "react-icons/md";
+import '../assets/style/header.css'
 const Header = () => {
     const user = useSelector(state => state?.user?.user)
     const dispatch = useDispatch()
@@ -47,26 +49,43 @@ const Header = () => {
                         <li className="relative group cursor-pointer list-none ">
                             Men
 
-                            <ul className="absolute p-10 left-0   top-full hidden group-hover:block bg-white opacity-80 shadow-lg  rounded-md text-blue-400 font-medium">
+                            <ul className="absolute p-10 left-0   top-full hidden group-hover:flex flex-col bg-white opacity-80 shadow-lg  rounded-md text-blue-400 font-medium">
                                 <Link className="m-3 " to={'/sneakers'}>Sneakers</Link>
                                 <Link className="m-3 " to={'/menclothe'}>Clothes</Link>
-                                <Link className="m-3 ">Accessories</Link>
+                                <li className="relative group/accessory">
+                                    <div className="flex items-center cursor-pointer">
+                                        Accessories
+                                        <MdNavigateNext className="ml-2 text-2xl font-bold text-green-600" />
+                                    </div>
+
+                                    <div className="absolute text-green-600 left-full top-0 rounded-md  hidden group-hover/accessory:block bg-white shadow-lg p-6">
+                                        <ul className='flex flex-row items-center justify-center gap-8 '>
+                                            <li>Hat</li>
+                                            <li>Bag</li>
+                                            <li>Socks</li>
+                                        </ul>
+                                    </div>
+                                </li>
                             </ul>
                         </li>
 
                         <li className="relative group cursor-pointer list-none ">
                             Women
 
-                            <ul className="absolute p-10 left-0   top-full hidden group-hover:block bg-white opacity-80 shadow-lg  rounded-md text-blue-400 font-medium">
+                            <ul className="absolute p-10 left-0   top-full hidden group-hover:flex flex-col bg-white opacity-80 shadow-lg  rounded-md text-blue-400 font-medium">
                                 <Link className="m-3 " to={'/sneakers'}>Sneakers</Link>
                                 <Link className="m-3 " to={'/womenclothe'}>Clothes</Link>
-                                <Link className="m-3 ">Accessories</Link>
+                                <div className='flex justify-center items-center'>
+                                    <Link className="m-3 ">Accessories</Link>
+                                    <MdNavigateNext className='text-2xl font-bold text-green-600' />
+
+                                </div>
                             </ul>
                         </li>
                         <li className="relative group cursor-pointer list-none ">
                             Sport
 
-                            <ul className="absolute p-10 left-0   top-full hidden group-hover:block bg-white opacity-80 shadow-lg  rounded-md text-blue-400 font-medium">
+                            <ul className="absolute p-10 left-0   top-full hidden group-hover:flex flex-col bg-white opacity-80 shadow-lg  rounded-md text-blue-400 font-medium">
                                 <Link className="m-3 " to={'/rackets'}>Racket</Link>
                                 <Link className="m-3 " to={'/balls'}>Ball</Link>
                                 <Link className="m-3 " to={'/sneakers'}>Sneakers</Link>
@@ -93,7 +112,7 @@ const Header = () => {
 
                         {
                             user?.role === "ADMIN" && (
-                                <Link to={'/adminpanel'}> 
+                                <Link to={'/adminpanel'}>
                                     <CiUser className="w-6 h-6 cursor-pointer text-blue-400" />
                                 </Link>
 
