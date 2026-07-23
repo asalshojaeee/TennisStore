@@ -1,12 +1,12 @@
 
 import image1d from '../assets/images/image1d.jpg'
-import image2d from '../assets/images/image2d.jpg'
-import image3d from '../assets/images/image3d.jpg'
+import baner2 from '../assets/images/baner2.jpg'
+import image10d from '../assets/images/image10d.jpg'
 import image4d from '../assets/images/image4d.jpg'
 
 import imag5d from '../assets/images/imag5d.jpg'
 
-import image1m from '../assets/images/image1m.jpg'
+// import image10d from '../assets/images/image10d.jpg'
 import image2m from '../assets/images/image2m.jpg'
 import image3m from '../assets/images/image3m.jpg'
 
@@ -17,8 +17,8 @@ import { useState, useEffect } from 'react'
 const Baner = () => {
 
 
-    const imgDesktop = [image2d, imag5d, image3d];
-    const imgMobile = [image1m, image2m, image3m];
+    const imgDesktop = [baner2, imag5d, image10d];
+    const imgMobile = [image10d, imag5d, baner2];
 
 
 

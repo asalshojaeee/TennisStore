@@ -55,10 +55,10 @@ const Header = () => {
                                 <li className="relative group/accessory">
                                     <div className="flex items-center cursor-pointer">
                                         Accessories
-                                        <MdNavigateNext className="ml-2 text-2xl font-bold text-green-600" />
+                                        <MdNavigateNext className="ml-2 text-2xl font-bold text-blue-600" />
                                     </div>
 
-                                    <div className="absolute text-green-600 left-full top-0 rounded-md  hidden group-hover/accessory:block bg-white shadow-lg p-6">
+                                    <div className="absolute text-blue-600 left-full top-0 rounded-md  hidden group-hover/accessory:block bg-white shadow-lg p-6">
                                         <ul className='flex flex-row items-center justify-center gap-8 '>
                                             <li>Hat</li>
                                             <li>Bag</li>

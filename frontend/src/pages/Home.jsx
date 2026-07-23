@@ -10,7 +10,7 @@ import image2m from '../assets/images/image2m.jpg'
 import image3m from '../assets/images/image3m.jpg'
 
 import model2 from '../assets/images/model2.jpg'
-import model6 from '../assets/images/model6.jpg'
+import model90 from '../assets/images/model90.jpg'
 import Footer from "../components/Footer"
 
 const Home = () => {
@@ -24,8 +24,8 @@ const Home = () => {
             <div className="w-full">
                 <div className="flex overflow-hidden">
                     <div className="w-full md:flex md:flex-row">
-                        <img src={model6} alt="" className="object-cover w-full" />
-                        <img src={model2} alt="" className="object-cover w-full" />
+                        <img src={model90} alt="" className="object-cover md:w-[50%] w-full" />
+                        <img src={model2} alt="" className="object-scale-cover md:w-[50%] w-full" />
                     </div>
 
 

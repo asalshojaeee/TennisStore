@@ -55,7 +55,7 @@ const Footer = () => {
 
 
                 <div className="md:flex justify-center items-center gap-10 mt-5 text-blue-300 p-5">
-                    <span >© 2025 AceSport. All rights reserved.</span>
+                    <span >© 2026 TennisStore. All rights reserved.</span>
                     <a href="#" >Privacy</a>
                     <a href="#">Terms</a>
                     <a href="#">Cookies</a>
