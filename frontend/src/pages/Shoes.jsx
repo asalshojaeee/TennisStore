@@ -31,40 +31,40 @@ const Shoes = () => {
 
                 {
                     loading ? (
-                            [...Array(8)].map((_, index) => (
-                                <div
-                                    key={index}
-                                    className="cart-body h-full w-full flex-col  shadow-sm p-5 rounded-xl animate-pulse"
-                                >
-                                    <div className="h-56 w-full rounded bg-gray-300"></div>
+                        [...Array(8)].map((_, index) => (
+                            <div
+                                key={index}
+                                className="cart-body h-full w-full flex-col  shadow-sm p-5 rounded-xl animate-pulse"
+                            >
+                                <div className="h-56 w-full rounded bg-gray-300"></div>
 
-                                    <div className="flex justify-center gap-2 mt-3">
-                                        {[...Array(3)].map((_, i) => (
-                                            <div
-                                                key={i}
-                                                className="w-2 h-2 rounded-full bg-gray-300"
-                                            ></div>
-                                        ))}
-                                    </div>
-
-                                    <div className="h-5 w-24 bg-gray-300 rounded mt-4"></div>
-
-                                    <div className="h-5 w-16 bg-gray-300 rounded mt-3"></div>
-
-                                    <div className="mt-4 gap-3 flex flex-wrap">
-                                        {[...Array(6)].map((_, i) => (
-                                            <div
-                                                key={i}
-                                                className="w-7 h-7 rounded-md bg-gray-300"
-                                            ></div>
-                                        ))}
-                                    </div>
-
-                                    <div className="mt-6">
-                                        <div className="h-10 w-full rounded-md bg-gray-300"></div>
-                                    </div>
+                                <div className="flex justify-center gap-2 mt-3">
+                                    {[...Array(3)].map((_, i) => (
+                                        <div
+                                            key={i}
+                                            className="w-2 h-2 rounded-full bg-gray-300"
+                                        ></div>
+                                    ))}
                                 </div>
-                            ))
+
+                                <div className="h-5 w-24 bg-gray-300 rounded mt-4"></div>
+
+                                <div className="h-5 w-16 bg-gray-300 rounded mt-3"></div>
+
+                                <div className="mt-4 gap-3 flex flex-wrap">
+                                    {[...Array(6)].map((_, i) => (
+                                        <div
+                                            key={i}
+                                            className="w-7 h-7 rounded-md bg-gray-300"
+                                        ></div>
+                                    ))}
+                                </div>
+
+                                <div className="mt-6">
+                                    <div className="h-10 w-full rounded-md bg-gray-300"></div>
+                                </div>
+                            </div>
+                        ))
                     ) : (
 
 
@@ -94,9 +94,9 @@ const Shoes = () => {
                                             />
                                         ))}
                                     </div>
-                                          <p className='text-gray-400 font-medium'>{pro?.productName}</p>
+                                    <p className='text-gray-400 font-medium'>{pro?.productName}</p>
 
-                  <p className='text-blue-400 font-medium'>Brand: {pro?.brandName}</p>
+                                    <p className='text-blue-400'>Brand: <span className='font-light text-blue-300'>{pro?.brandName}</span></p>
                                     <p className='text-blue-300 font-medium'>{displayCurrency(pro?.price)}</p>
 
                                     <div className='mt-4 gap-3 flex'>

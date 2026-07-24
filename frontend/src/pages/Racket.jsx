@@ -8,7 +8,7 @@ import React, { useEffect, useState } from 'react'
 const Racket = () => {
   const [loading, setLoading] = useState(true)
   const [products, setProducts] = useState([])
-    const [currentImage, setCurrentImage] = useState({})
+  const [currentImage, setCurrentImage] = useState({})
 
 
 
@@ -82,8 +82,8 @@ const Racket = () => {
 
                     src={pro.productImage[currentImage[pro._id] || 0]}
 
-                    alt="" 
-                    
+                    alt=""
+
                     className='bg-transparent mix-blend-multiply h-56 w-full rounded-xl' />
                   <div className="flex justify-center gap-2 mt-3">
                     {pro.productImage.map((img, i) => (
@@ -102,9 +102,9 @@ const Racket = () => {
                       />
                     ))}
                   </div>
-                           <p className='text-gray-400 font-medium'>{pro?.productName}</p>
+                  <p className='text-gray-400 font-medium'>{pro?.productName}</p>
 
-                  <p className='text-blue-400 font-medium'>Brand: {pro?.brandName}</p>
+                  <p className='text-blue-400'>Brand: <span className='font-light text-blue-300'>{pro?.brandName}</span></p>
                   <p className='text-blue-300 font-medium'>{displayCurrency(pro?.price)}</p>
 
 

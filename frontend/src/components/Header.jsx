@@ -60,9 +60,9 @@ const Header = () => {
 
                                     <div className="absolute text-blue-600 left-full top-0 rounded-md  hidden group-hover/accessory:block bg-white shadow-lg p-6">
                                         <ul className='flex flex-row items-center justify-center gap-8 '>
-                                            <li>Hat</li>
-                                            <li>Bag</li>
-                                            <li>Socks</li>
+                                            <Link to={'/hat'}> <li>Hat</li></Link>
+                                            <Link to={'/bag'}><li>Bag</li></Link>
+                                            <Link to={'/socks'}><li>Socks</li></Link>
                                         </ul>
                                     </div>
                                 </li>
@@ -75,11 +75,21 @@ const Header = () => {
                             <ul className="absolute p-10 left-0   top-full hidden group-hover:flex flex-col bg-white opacity-80 shadow-lg  rounded-md text-blue-400 font-medium">
                                 <Link className="m-3 " to={'/sneakers'}>Sneakers</Link>
                                 <Link className="m-3 " to={'/womenclothe'}>Clothes</Link>
-                                <div className='flex justify-center items-center'>
-                                    <Link className="m-3 ">Accessories</Link>
-                                    <MdNavigateNext className='text-2xl font-bold text-green-600' />
-
+                                <li className="relative group/accessoryWomen">
+                                <div className="flex items-center cursor-pointer">
+                                    Accessories
+                                    <MdNavigateNext className="ml-2 text-2xl font-bold text-blue-600" />
                                 </div>
+
+                                <div className="absolute text-blue-600 left-full top-0 rounded-md  hidden group-hover/accessoryWomen:block bg-white shadow-lg p-6">
+                                    <ul className='flex flex-row items-center justify-center gap-8 '>
+                                        <Link to={'/hat'}> <li>Hat</li></Link>
+                                        <Link to={'/bag'}><li>Bag</li></Link>
+                                        <Link to={'/socks'}><li>Socks</li></Link>
+                                    </ul>
+                                </div>
+
+                                </li>
                             </ul>
                         </li>
                         <li className="relative group cursor-pointer list-none ">

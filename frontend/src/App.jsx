@@ -20,6 +20,9 @@ import Shoes from "./pages/Shoes"
 import Racket from "./pages/Racket"
 import MenClothes from "./pages/MenClothes"
 import WomenClothes from "./pages/WomenClothes"
+import Bag from "./pages/Bag"
+import Hat from "./pages/Hat"
+import Socks from "./pages/Socks"
 
 
 
@@ -67,6 +70,9 @@ function App() {
             <Route path="/menclothe" element={<MenClothes/>}/>
             <Route path="/womenclothe" element={<WomenClothes/>}/>
 
+            <Route path="/bag" element={<Bag/>}/>
+            <Route path="/hat" element={<Hat/>}/>
+            <Route path="/socks" element={<Socks/>}/>
 
           </Route>
         </Route>

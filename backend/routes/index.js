@@ -13,6 +13,9 @@ const getBallProduct = require('../controller/getBallProduct');
 const getRacketProducts = require('../controller/getRacketProducts');
 const menClothes = require('../controller/getMenClothes');
 const getWomenClothes = require('../controller/getWomenClothes');
+const getBagProducts = require('../controller/getBagProducts');
+const getHatProducts = require('../controller/getHatProduct');
+const getSocksProducts = require('../controller/getSocksProduct');
 const router = express.Router();
 
 router.post('/signup', signUp);
@@ -27,5 +30,8 @@ router.get('/getballproduct', getBallProduct)
 router.get('/getracketproduct', getRacketProducts)
 router.get('/getmenclothes', menClothes)
 router.get('/getwomenclothes', getWomenClothes)
+router.get('/getbagproducts', getBagProducts)
+router.get('/getHatProducts', getHatProducts)
+router.get('/getSocksProducts', getSocksProducts)
 
 module.exports = router

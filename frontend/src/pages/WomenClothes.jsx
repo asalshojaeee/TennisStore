@@ -96,7 +96,7 @@ const WomenClothes = () => {
                                     </div>
                                     <p className='text-gray-400 font-medium'>{pro?.productName}</p>
 
-                                    <p className='text-blue-400 font-medium'>Brand: {pro?.brandName}</p>
+                                    <p className='text-blue-400'>Brand: <span className='font-light text-blue-300'>{pro?.brandName}</span></p>
                                     <p className='text-blue-300 font-medium'>{displayCurrency(pro?.price)}</p>
                                     <ul className='list-none flex text-center gap-1'>
                                         <li className='border border-blue-300 text-gray-400 rounded-sm w-10 hover:border-2 translate-y-0.5 cursor-pointer'>Md</li>

@@ -7,14 +7,14 @@ import displayCurrency from '../helpers/displayCurrency'
 
 
 
-const Ball = () => {
+const Hat = () => {
   const [loading, setLoading] = useState(true)
   const [products, setProducts] = useState([])
   const [currentImage, setCurrentImage] = useState({})
 
   const fetchProduct = async () => {
     setLoading(true)
-    const responseData = await axios.get('http://localhost:3000/api/getballproduct')
+    const responseData = await axios.get('http://localhost:3000/api/getHatProducts')
     setProducts(responseData.data.data)
     setLoading(false)
 
@@ -96,10 +96,7 @@ const Ball = () => {
                         />
                       ))}
                     </div>
-                    <p className='text-gray-400 font-medium'>{pro?.productName}</p>
-
-                    <p className='text-blue-400'>Brand: <span className='font-light text-blue-300'>{pro?.brandName}</span></p>
-
+                 <p className='text-blue-400'>Brand: <span className='font-light text-blue-300'>{pro?.brandName}</span></p>
                     <p className='text-blue-300 font-medium'>{displayCurrency(pro?.price)}</p>
 
 
@@ -123,4 +120,4 @@ const Ball = () => {
   )
 }
 
-export default Ball
+export default Hat
