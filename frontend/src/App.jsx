@@ -74,6 +74,7 @@ function App() {
             <Route path="/bag" element={<Bag/>}/>
             <Route path="/hat" element={<Hat/>}/>
             <Route path="/socks" element={<Socks/>}/>
+            <Route path="/product/:id" element={<CartProductDetails/>}/>
 
           </Route>
         </Route>
