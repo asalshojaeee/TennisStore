@@ -70,12 +70,12 @@ const MenClothes = () => {
 
             products.map((pro, index) => {
               return (
-                <div key={index} className='cart-body h-full w-full flex-col  shadow-sm p-5 rounded-xl'>
+                <div key={index} className='cart-body hover:translate-y-0.5 transition-all cursor-pointer h-full w-full flex-col  shadow-sm p-5 rounded-xl'>
                   <img
 
                     src={pro.productImage[currentImage[pro._id] || 0]}
 
-                    alt="" className='bg-transparent mix-blend-multiply h-56 rounded-xl object-cover w-full' />
+                    alt="" className='bg-transparent mix-blend-multiply h-56 rounded-xl object-contain w-full' />
                   <div className="flex justify-center gap-2 mt-3">
                     {pro.productImage.map((img, i) => (
                       <button
@@ -98,17 +98,17 @@ const MenClothes = () => {
                   <p className='text-blue-400'>Brand: <span className='font-light text-blue-300'>{pro?.brandName}</span></p>
                   <p className='text-blue-300 font-medium'>{displayCurrency(pro?.price)}</p>
 
-                  <ul className='list-none flex text-center gap-1'>
+                  {/* <ul className='list-none flex text-center gap-1'>
                     <li className='border border-blue-300 text-gray-400 rounded-sm w-10 hover:border-2 translate-y-0.5 cursor-pointer'>Md</li>
                     <li className='border border-blue-300 text-gray-400 rounded-sm w-10 hover:border-2 translate-y-0.5 cursor-pointer' >Lg</li>
                     <li className='border border-blue-300 text-gray-400 rounded-sm w-10 hover:border-2 translate-y-0.5 cursor-pointer'>Xlg</li>
 
                     <li className='border border-blue-300 text-gray-400 rounded-sm w-10 hover:border-2 translate-y-0.5 cursor-pointer'>3XL</li>
-                  </ul>
-                  <div className='text-center mt-6'>
+                  </ul> */}
+                  {/* <div className='text-center mt-6'>
                     <button className='bg-blue-400 w-full hover:translate-y-1 transition-all text-white p-2 rounded-md'>Add to cart</button>
 
-                  </div>
+                  </div> */}
                 </div>
               )
 

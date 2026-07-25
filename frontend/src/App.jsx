@@ -23,6 +23,7 @@ import WomenClothes from "./pages/WomenClothes"
 import Bag from "./pages/Bag"
 import Hat from "./pages/Hat"
 import Socks from "./pages/Socks"
+import CartProductDetails from "./components/CartProductDetails"
 
 
 

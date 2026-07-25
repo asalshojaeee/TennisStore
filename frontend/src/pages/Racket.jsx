@@ -77,7 +77,7 @@ const Racket = () => {
 
             products.map((pro, index) => {
               return (
-                <div key={index} className='cart-body h-full w-full flex-col  shadow-sm p-3 rounded-xl'>
+                <div key={index} className='cart-body hover:translate-y-0.5 transition-all cursor-pointer h-full w-full flex-col  shadow-sm p-3 rounded-xl'>
                   <img
 
                     src={pro.productImage[currentImage[pro._id] || 0]}
@@ -108,10 +108,10 @@ const Racket = () => {
                   <p className='text-blue-300 font-medium'>{displayCurrency(pro?.price)}</p>
 
 
-                  <div className='text-center mt-6'>
+                  {/* <div className='text-center mt-6'>
                     <button className='bg-blue-400 w-full hover:translate-y-1 transition-all text-white p-2 rounded-md'>Add to cart</button>
 
-                  </div>
+                  </div> */}
                 </div>
               )
 

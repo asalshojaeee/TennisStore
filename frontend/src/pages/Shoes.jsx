@@ -3,6 +3,7 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import { useEffect } from 'react';
 import displayCurrency from '../helpers/displayCurrency'
+import CartProductDetails from '../components/CartProductDetails';
 
 const Shoes = () => {
 
@@ -71,12 +72,12 @@ const Shoes = () => {
 
                         products.map((pro, index) => {
                             return (
-                                <div key={index} className='cart-body h-full w-full flex-col  shadow-sm p-5 rounded-xl'>
+                                <div key={index} className='cart-body h-full w-full flex-col  shadow-sm p-5 rounded-xl cursor-pointer hover:translate-y-0.5  transition-all'>
                                     <img
 
                                         src={pro.productImage[currentImage[pro._id] || 0]}
 
-                                        alt="" className='bg-transparent mix-blend-multiply h-56 w-full object-contain' />
+                                        alt="" className='bg-transparent mix-blend-multiply h-56 w-full object-contain hover:scale-120 transition-all' />
                                     <div className="flex justify-center gap-2 mt-3">
                                         {pro.productImage.map((img, i) => (
                                             <button
@@ -99,18 +100,18 @@ const Shoes = () => {
                                     <p className='text-blue-400'>Brand: <span className='font-light text-blue-300'>{pro?.brandName}</span></p>
                                     <p className='text-blue-300 font-medium'>{displayCurrency(pro?.price)}</p>
 
-                                    <div className='mt-4 gap-3 flex'>
+                                    {/* <div className='mt-4 gap-3 flex'>
                                         <div className='bg-blue-200 text-white rounded-md w-7 text-center  cursor-pointer' onClick>37</div>
                                         <div className='bg-blue-200 text-white rounded-md w-7 text-center  cursor-pointer' onClick>38</div>
                                         <div className='bg-blue-200 text-white rounded-md w-7 text-center cursor-pointer' onClick>40</div>
                                         <div className='bg-blue-200 text-white rounded-md w-7 text-center cursor-pointer' onClick>42</div>
                                         <div className='bg-blue-200 text-white rounded-md w-7 text-center cursor-pointer' onClick>45</div>
                                         <div className='bg-blue-200 text-white rounded-md w-7 text-center cursor-pointer' onClick>47</div>
-                                    </div>
-                                    <div className='text-center mt-6'>
+                                    </div> */}
+                                    {/* <div className='text-center mt-6'>
                                         <button className='bg-blue-400 w-full hover:translate-y-1 transition-all text-white p-2 rounded-md'>Add to cart</button>
 
-                                    </div>
+                                    </div> */}
                                 </div>
                             )
                         })
