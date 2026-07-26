@@ -7,6 +7,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
 import displayCurrency from '../helpers/displayCurrency'
+import { data, Link, useNavigate } from 'react-router-dom'
 
 
 
@@ -75,39 +76,43 @@ const Socks = () => {
 
             (
               products.map((pro, index) => {
+
                 return (
-                  <div key={index} className='cart-body cursor-pointer h-full w-full flex-col  shadow-sm p-5 rounded-xl'>
-                    <img
+                  <Link to={`/product/${pro?._id}`}>
 
-                      src={pro.productImage[currentImage[pro._id] || 0]}
+                    <div key={index} className='cart-body cursor-pointer h-full w-full flex-col  shadow-sm p-5 rounded-xl'>
+                      <img
 
-                      alt="" className='bg-transparent mix-blend-multiply h-56 rounded-xl hover:scale-120 transition-all object-contain w-full' />
-                    <div className="flex justify-center gap-2 mt-3">
-                      {pro.productImage.map((img, i) => (
-                        <button
-                          key={i}
-                          onClick={() =>
-                            setCurrentImage(prev => ({
-                              ...prev,
-                              [pro._id]: i
-                            }))
-                          }
-                          className={`cursor-pointer w-2 h-2 rounded-full ${(currentImage[pro._id] || 0) === i
-                            ? "bg-blue-600"
-                            : "bg-gray-300"
-                            }`}
-                        />
-                      ))}
-                    </div>
-                 <p className='text-blue-400'>Brand: <span className='font-light text-blue-300'>{pro?.brandName}</span></p>
-                    <p className='text-blue-300 font-medium'>{displayCurrency(pro?.price)}</p>
+                        src={pro.productImage[currentImage[pro._id] || 0]}
+
+                        alt="" className='bg-transparent mix-blend-multiply h-56 rounded-xl hover:scale-120 transition-all object-contain w-full' />
+                      <div className="flex justify-center gap-2 mt-3">
+                        {pro.productImage.map((img, i) => (
+                          <button
+                            key={i}
+                            onClick={() =>
+                              setCurrentImage(prev => ({
+                                ...prev,
+                                [pro._id]: i
+                              }))
+                            }
+                            className={`cursor-pointer w-2 h-2 rounded-full ${(currentImage[pro._id] || 0) === i
+                              ? "bg-blue-600"
+                              : "bg-gray-300"
+                              }`}
+                          />
+                        ))}
+                      </div>
+                      <p className='text-blue-400'>Brand: <span className='font-light text-blue-300'>{pro?.brandName}</span></p>
+                      <p className='text-blue-300 font-medium'>{displayCurrency(pro?.price)}</p>
 
 
-                    {/* <div className='text-center mt-6'>
+                      {/* <div className='text-center mt-6'>
                       <button className='bg-blue-400 w-full hover:translate-y-1 transition-all text-white p-2 rounded-md'>Add to cart</button>
 
                     </div> */}
-                  </div>
+                    </div>
+                  </Link>
                 )
 
               })
