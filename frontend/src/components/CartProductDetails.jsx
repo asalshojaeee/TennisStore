@@ -4,8 +4,25 @@ import axios from 'axios'
 
 import { useNavigate, useParams } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
+import { CiCirclePlus } from "react-icons/ci";
+import { CiCircleMinus } from "react-icons/ci";
 
 function CartProductDetails() {
+
+
+  const [quantity, setQuantity] = useState(1)
+
+
+  const handleQuantityPlus = (e) => {
+
+    setQuantity(preve => preve += 1)
+
+  }
+  const handleQuantityMinus = (e) => {
+    setQuantity(preve => preve -= 1)
+
+
+  }
   const params = useParams()
 
   const [data, setData] = useState({
@@ -34,51 +51,81 @@ function CartProductDetails() {
 
 
 
-      <div className='flex gap-20'>
-            <img src={data.productImage[0]} alt="" className='w-50 h-60' />
+      <div className="container">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
 
-    
+          <div>
+            <img
+              src={data.productImage[0]}
+              alt=""
+              className="w-full max-w-md mx-auto h-auto object-contain"
+            />
 
-  
-        <div className='shadow-xl w-full p-10 '>
-          <p className='text-blue-500 text-lg'>{data.productName}</p>
-          <p className='text-slate-300 text-lg'>Brand: {data.brandName}</p>
-          <p className='text-slate-300 text-lg'>Price: {data.price}</p>
-          <p className='text-slate-300 text-lg'>{data.sellingPrice}</p>
-          <div className='flex flex-row gap-3'>
-            <p className='text-slate-300 text-lg'>Size</p>
-            <ul className='flex gap-5 text-center'>
-              <li className=' text-green-600 text-lg rounded-full w-8 h-8 border border-blue-400'>38</li>
-              <li className=' text-green-600  text-lg rounded-full w-8 h-8 border border-blue-400'>45</li>
-              <li className=' text-green-600 text-lg rounded-full w-8 h-8 border border-blue-400'>47</li>
-            </ul>
+            <div className="flex flex-wrap gap-3 justify-center mt-5">
+              {data?.productImage.map((img, index) => (
+                <div
+                  key={index}
+                  className="w-20 h-20  rounded p-1"
+                >
+                  <img
+                    src={img}
+                    className="w-full h-full object-contain cursor-pointer"
+                    alt=""
+                  />
+                </div>
+              ))}
+            </div>
           </div>
 
-          <button className='bg-blue-400 p-2 text-white mt-5 w-50 rounded-md'>Add to cart</button>
+          <div className="shadow-xl rounded-lg p-6 w-full ">
+            <p className="text-2xl text-blue-500 font-semibold">
+              {data.productName}
+            </p>
+
+            <p className="text-gray-500 mt-3">
+              Brand: {data.brandName}
+            </p>
+
+            <p className="text-gray-500">
+              Price: {data.price}
+            </p>
+
+            <p className="text-xl font-bold mt-3 text-gray-500">
+              {data.sellingPrice}
+            </p>
+
+            <div className="flex items-center justify-start gap-4 mt-6 text-gray-500">
+              <span>Size</span>
+
+              <ul className="flex gap-3">
+                <li className="w-10 h-10 rounded-full border border-blue-400 flex justify-center items-center">
+                  38
+                </li>
+                <li className="w-10 h-10 rounded-full border border-blue-400 flex justify-center items-center">
+                  45
+                </li>
+                <li className="w-10 h-10 rounded-full border border-blue-400 flex justify-center items-center">
+                  47
+                </li>
+              </ul>
+            </div>
+            <div className='flex flex-row items-center justify-start mt-10 gap-3 '>
+                <button><CiCirclePlus className='text-3xl text-gray-400' onClick={handleQuantityPlus} /></button>
+                <p className='text-gray-400'>{quantity}</p>
+
+                <button><CiCircleMinus className='text-3xl text-gray-400' onClick={handleQuantityMinus} /></button>
+
+              <button className=" w-full md:w-60 bg-blue-500 text-white p-3 rounded-lg">
+                Add to cart
+              </button>
+            </div>
 
 
-
+          </div>
 
         </div>
-
       </div>
-            <div className='flex flex-row'>
-              {
-            data?.productImage.map((img, index) => {
 
-              return (
-                <div className="h-20 w-20  rounded p-1" key={index}>
-                  <img
-
-                    src={img} className="h-full cursor-pointer mix-blend-multiply w-full object-scale-down" alt="" />
-                </div>
-              )
-
-            })
-          }
-  
-          </div>
-      
     </>
   )
 }
