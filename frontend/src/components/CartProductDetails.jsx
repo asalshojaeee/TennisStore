@@ -11,6 +11,7 @@ function CartProductDetails() {
 
 
   const [quantity, setQuantity] = useState(1)
+  const [activeImage, setActiveImage] = useState("")
 
 
   const handleQuantityPlus = (e) => {
@@ -21,6 +22,13 @@ function CartProductDetails() {
   const handleQuantityMinus = (e) => {
     setQuantity(preve => preve -= 1)
 
+
+  }
+
+
+  const handleEnterImage = (img) => {
+
+    setActiveImage(img)
 
   }
   const params = useParams()
@@ -40,6 +48,8 @@ function CartProductDetails() {
       productId: params?.id
     })
     setData(response.data.data)
+    setActiveImage(response?.data.data.productImage[0])
+
 
   }
   useEffect(() => {
@@ -56,7 +66,7 @@ function CartProductDetails() {
 
           <div>
             <img
-              src={data.productImage[0]}
+              src={activeImage}
               alt=""
               className="w-full max-w-md mx-auto h-auto object-contain"
             />
@@ -71,6 +81,7 @@ function CartProductDetails() {
                     src={img}
                     className="w-full h-full object-contain cursor-pointer"
                     alt=""
+                    onClick={() => handleEnterImage(img)}
                   />
                 </div>
               ))}
@@ -109,13 +120,13 @@ function CartProductDetails() {
                 </li>
               </ul>
             </div>
-            <div className='flex flex-row items-center justify-start mt-10 gap-3 '>
-                <button><CiCirclePlus className='text-3xl text-gray-400' onClick={handleQuantityPlus} /></button>
-                <p className='text-gray-400'>{quantity}</p>
+            <div className='flex flex-row items-center justify-start mt-20 gap-3 '>
+              <button className='cursor-pointer'><CiCirclePlus className='text-3xl text-gray-400' onClick={handleQuantityPlus} /></button>
+              <p className='text-gray-400'>{quantity}</p>
 
-                <button><CiCircleMinus className='text-3xl text-gray-400' onClick={handleQuantityMinus} /></button>
+              <button className='cursor-pointer'><CiCircleMinus className='text-3xl text-gray-400' onClick={handleQuantityMinus} /></button>
 
-              <button className=" w-full md:w-60 bg-blue-500 text-white p-3 rounded-lg">
+              <button className="cursor-pointer hover:translate-y-0.5 transition-all w-full md:w-60 bg-blue-500 text-white p-3 rounded-lg">
                 Add to cart
               </button>
             </div>
