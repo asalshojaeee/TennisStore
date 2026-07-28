@@ -19,12 +19,14 @@ function CartProductDetails() {
     setQuantity(preve => preve += 1)
 
   }
-  const handleQuantityMinus = (e) => {
-    setQuantity(preve => preve -= 1)
-
-
-  }
-
+  const handleQuantityMinus = () => {
+    setQuantity(prev => {
+      if (prev <= 0) {
+        return 0;
+      }
+      return prev - 1;
+    });
+  };
 
   const handleEnterImage = (img) => {
 
