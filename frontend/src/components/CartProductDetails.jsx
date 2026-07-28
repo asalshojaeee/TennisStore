@@ -8,7 +8,7 @@ import { CiCirclePlus } from "react-icons/ci";
 import { CiCircleMinus } from "react-icons/ci";
 
 function CartProductDetails() {
-
+  const [recommandedProduct, setRecommandedProduct] = useState([])
 
   const [quantity, setQuantity] = useState(1)
   const [activeImage, setActiveImage] = useState("")
@@ -55,6 +55,21 @@ function CartProductDetails() {
   useEffect(() => {
     fetchData()
   }, [params])
+
+
+
+  const recommandedProducts = async () => {
+
+    const res = await axios.get(
+      `http://localhost:3000/api/getrecommanded?category=${data.category}&brand=${data.brandName}&id=${params.id}`
+    )
+    setRecommandedProduct(res.data.data)
+  }
+  useEffect(() => {
+    if (!data.category) return;
+
+    recommandedProducts();
+  }, [data.category]);
   return (
 
     <>
@@ -131,6 +146,33 @@ function CartProductDetails() {
               </button>
             </div>
 
+
+          </div>
+
+        </div>
+        <div className='container'>
+          <h2 className='text-2xl font-bold text-blue-300 mt-10 p-5'>Recommanded Products</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+            {
+              recommandedProduct.map((res, index) => {
+                return (
+
+                  <div className='cart'>
+                    <div className='cart-header'></div>
+                    <div className='cart-body'>
+
+                      <img src={res.productImage[0]} alt="" />
+                    </div>
+
+
+                  </div>
+
+
+
+
+                )
+              })
+            }
 
           </div>
 
