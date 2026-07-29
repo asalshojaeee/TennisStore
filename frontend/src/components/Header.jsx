@@ -11,13 +11,15 @@ import { GiTennisRacket } from "react-icons/gi";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import axios from 'axios'
 import { setUserDetails } from "../store/userSlice";
-import { use } from "react";
+import { use, useState } from "react";
 import { MdNavigateNext } from "react-icons/md";
 import '../assets/style/header.css'
 const Header = () => {
     const user = useSelector(state => state?.user?.user)
     const dispatch = useDispatch()
     const navigate = useNavigate()
+
+    const [search, setSearch] = useState("")
 
 
 
@@ -31,7 +33,12 @@ const Header = () => {
             navigate("/");
         }
     };
+    const handleSearch = (e) => {
+        const res = e.target.value;
+        setSearch(res);
+        navigate(`/search?q=${res}`)
 
+    }
     return (
         <>
 
@@ -76,18 +83,18 @@ const Header = () => {
                                 <Link className="m-3 " to={'/sneakers'}>Sneakers</Link>
                                 <Link className="m-3 " to={'/womenclothe'}>Clothes</Link>
                                 <li className="relative group/accessoryWomen">
-                                <div className="flex items-center cursor-pointer">
-                                    Accessories
-                                    <MdNavigateNext className="ml-2 text-2xl font-bold text-blue-600" />
-                                </div>
+                                    <div className="flex items-center cursor-pointer">
+                                        Accessories
+                                        <MdNavigateNext className="ml-2 text-2xl font-bold text-blue-600" />
+                                    </div>
 
-                                <div className="absolute text-blue-600 left-full top-0 rounded-md  hidden group-hover/accessoryWomen:block bg-white shadow-lg p-6">
-                                    <ul className='flex flex-row items-center justify-center gap-8 '>
-                                        <Link to={'/hat'}> <li>Hat</li></Link>
-                                        <Link to={'/bag'}><li>Bag</li></Link>
-                                        <Link to={'/socks'}><li>Socks</li></Link>
-                                    </ul>
-                                </div>
+                                    <div className="absolute text-blue-600 left-full top-0 rounded-md  hidden group-hover/accessoryWomen:block bg-white shadow-lg p-6">
+                                        <ul className='flex flex-row items-center justify-center gap-8 '>
+                                            <Link to={'/hat'}> <li>Hat</li></Link>
+                                            <Link to={'/bag'}><li>Bag</li></Link>
+                                            <Link to={'/socks'}><li>Socks</li></Link>
+                                        </ul>
+                                    </div>
 
                                 </li>
                             </ul>
@@ -115,7 +122,10 @@ const Header = () => {
                 <div className="flex justify-between  items-center px-17 gap-7 ">
                     <div className="hidden md:flex justify-between items-center border border-blue-100 rounded-xl gap-3 p-1">
                         <FiSearch className="cursor-pointer w-6 h-6 text-blue-300" />
-                        <input className="w-80  p-2 transition-all  text-gray-500 outline-none " type="text" placeholder="Search product" />
+                        <input
+                            value={search}
+                            onChange={handleSearch}
+                            className="w-80  p-2 transition-all  text-gray-500 outline-none " type="text" placeholder="Search product" />
                     </div>
 
                     <div className="flex justify-center items-center">

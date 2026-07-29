@@ -18,6 +18,7 @@ const getHatProducts = require('../controller/getHatProduct');
 const getSocksProducts = require('../controller/getSocksProduct');
 const getProductDetails = require('../controller/getProductDetails');
 const recommandedProduct = require('../controller/recommandedProduct');
+const searchProduct = require('../controller/searchProduct');
 const router = express.Router();
 
 router.post('/signup', signUp);
@@ -37,5 +38,6 @@ router.get('/getHatProducts', getHatProducts)
 router.get('/getSocksProducts', getSocksProducts)
 router.post('/getproductdetail', getProductDetails)
 router.get('/getrecommanded', recommandedProduct)
+router.get('/searchproduct', searchProduct)
 
 module.exports = router
