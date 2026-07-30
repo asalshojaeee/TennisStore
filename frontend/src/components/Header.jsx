@@ -13,13 +13,19 @@ import axios from 'axios'
 import { setUserDetails } from "../store/userSlice";
 import { use, useState } from "react";
 import { MdNavigateNext } from "react-icons/md";
+import MobileMenu from './MobileMenu';
 import '../assets/style/header.css'
+
+
+
 const Header = () => {
     const user = useSelector(state => state?.user?.user)
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
     const [search, setSearch] = useState("")
+
+    const [openMenu, setOpenMenu] = useState(false)
 
 
 
@@ -42,7 +48,7 @@ const Header = () => {
     return (
         <>
 
-<section className="flex justify-between items-center px-2 md:px-6">
+            <section className="flex justify-between items-center px-2 md:px-6">
 
                 <Link to={'/'} >
                     <img src={logo1} alt=""
@@ -129,7 +135,7 @@ const Header = () => {
                             className="w-80  p-2 transition-all  text-gray-500 outline-none " type="text" placeholder="Search product" />
                     </div>
 
-<div className="hidden md:flex justify-center items-center">
+                    <div className="hidden md:flex justify-center items-center">
                         {
                             user?.role === "ADMIN" && (
                                 <Link to={'/adminpanel'}>
@@ -162,9 +168,11 @@ const Header = () => {
 
                     <div className="md:hidden"
                     >
-                        <IoMenuOutline className="w-10 h-10" />
+                        <IoMenuOutline
 
-                    </div>
+                            onClick={() => setOpenMenu(true)}
+                            className="w-10 h-10 cursor-pointer" />
+                        <MobileMenu open={openMenu} setOpen={setOpenMenu} />                    </div>
                 </div>
 
 
