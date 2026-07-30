@@ -15,10 +15,9 @@ const Footer = () => {
             <footer className="h-30 container">
 
 
-                <div className="md:flex md:justify-center md:items-center md:gap-50 m-10  ">
-                    <div>
-                        <img src={logo1} alt="" className="w-30 h-30" />
-                    </div>
+                <div className="md:flex md:justify-center md:items-center md:gap-50 mx-10 my-10">                    <div>
+                    <img src={logo1} alt="" className="w-30 h-30" />
+                </div>
                     <div className="text-slate-400 ">
                         <h4 className="text-md text-blue-400 font-bold">SHOP</h4>
                         <p>Rackets</p>
@@ -51,20 +50,18 @@ const Footer = () => {
 
 
                 </div>
-                <hr className="w-300 mx-auto text-slate-300" />
 
 
-                <div className="md:flex justify-center items-center gap-10 mt-5 text-blue-300 p-5">
-                    <span >© 2026 TennisStore. All rights reserved.</span>
+                <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-10 mt-5 text-blue-300 p-5">                    <span >© 2026 TennisStore. All rights reserved.</span>
                     <a href="#" >Privacy</a>
                     <a href="#">Terms</a>
                     <a href="#">Cookies</a>
 
 
-                    <div className="md:flex flex-row gap-5 text-slate-300">
-                        <FaInstagram className="hover:text-slate-400 transition-all cursor-pointer"/>
-                        <FaXTwitter className="hover:text-slate-400 transition-all cursor-pointer"/>
-                        <MdOutlineMailOutline  className="hover:text-slate-400 transition-all cursor-pointer"/>
+                    <div className="flex gap-5 text-slate-300">
+                        <FaInstagram className="hover:text-slate-400 transition-all cursor-pointer" />
+                        <FaXTwitter className="hover:text-slate-400 transition-all cursor-pointer" />
+                        <MdOutlineMailOutline className="hover:text-slate-400 transition-all cursor-pointer" />
 
                     </div>
 

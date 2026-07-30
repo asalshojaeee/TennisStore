@@ -42,11 +42,12 @@ const Header = () => {
     return (
         <>
 
-            <section className="flex justify-between  items-center">
-
+<section className="flex justify-between items-center px-2 md:px-6">
 
                 <Link to={'/'} >
-                    <img src={logo1} alt="" className="w-30 h-30" />
+                    <img src={logo1} alt=""
+                        className="w-20 h-20 md:w-30 md:h-30"
+                    />
                 </Link>
 
 
@@ -119,7 +120,7 @@ const Header = () => {
 
 
 
-                <div className="flex justify-between  items-center px-17 gap-7 ">
+                <div className="flex items-center gap-2 px-2 md:gap-7 md:px-6">
                     <div className="hidden md:flex justify-between items-center border border-blue-100 rounded-xl gap-3 p-1">
                         <FiSearch className="cursor-pointer w-6 h-6 text-blue-300" />
                         <input
@@ -128,8 +129,7 @@ const Header = () => {
                             className="w-80  p-2 transition-all  text-gray-500 outline-none " type="text" placeholder="Search product" />
                     </div>
 
-                    <div className="flex justify-center items-center">
-
+<div className="hidden md:flex justify-center items-center">
                         {
                             user?.role === "ADMIN" && (
                                 <Link to={'/adminpanel'}>
@@ -161,7 +161,6 @@ const Header = () => {
 
 
                     <div className="md:hidden"
-                    // onClick={handleMenu}
                     >
                         <IoMenuOutline className="w-10 h-10" />
 

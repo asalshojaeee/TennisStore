@@ -37,7 +37,7 @@ const Baner = () => {
     return (
 
 
-        <div className='containar mx-auto  rounded'>
+        <div className='overflow-hidden w-full'>
             <div className='h-56 md:h-90 w-full bg-slate-200'>
 
 
@@ -68,7 +68,7 @@ const Baner = () => {
                         imgMobile.map((URL, index) => {
                             return (
 
-                                <div style={{ transform: `translateX(-${currentImage * 100}%)` }} className='w-full h-70 min-h-full min-w-full transition-all'>
+                                <div style={{ transform: `translateX(-${currentImage * 100}%)` }} className='w-full h-70  min-w-full transition-all'>
                                     <img src={URL} alt="" className='w-full h-full' />
 
                                 </div>
