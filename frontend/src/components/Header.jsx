@@ -101,7 +101,7 @@ const Header = () => {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link className="block py-2" to="/menclothe">
+                                    <Link className="block py-2" to="/womenclothe">
                                         Clothes
                                     </Link>
                                 </li>
