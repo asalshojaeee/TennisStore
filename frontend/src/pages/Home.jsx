@@ -21,7 +21,7 @@ const Home = () => {
             <Baner />
 
 
-            <div className="w-full">
+            <div className="w-full overflow-hidden">
                 <div className="flex overflow-hidden">
                     <div className="w-full md:flex md:flex-row">
                         <img src={model90} alt="" className="object-cover md:w-[50%] w-full" />

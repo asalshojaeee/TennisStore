@@ -12,10 +12,10 @@ const Footer = () => {
 
         <>
 
-            <footer className="h-30 ">
+            <footer className="h-30 container">
 
 
-                <div className="md:flex justify-center items-center gap-50 m-10  ">
+                <div className="md:flex md:justify-center md:items-center md:gap-50 m-10  ">
                     <div>
                         <img src={logo1} alt="" className="w-30 h-30" />
                     </div>
