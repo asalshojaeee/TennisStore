@@ -63,9 +63,17 @@ const Header = () => {
                         <li className="relative group cursor-pointer list-none ">
                             Men
 
-                            <ul className="absolute p-10 left-0   top-full hidden group-hover:flex flex-col bg-white opacity-80 shadow-lg  rounded-md text-blue-400 font-medium">
-                                <Link className="m-3 " to={'/sneakers'}>Sneakers</Link>
-                                <Link className="m-3 " to={'/menclothe'}>Clothes</Link>
+                            <ul className="absolute p-6 left-0 top-full hidden group-hover:flex flex-col bg-white opacity-80 shadow-lg rounded-md text-blue-400 font-medium w-48">
+                                <li>
+                                    <Link className="block py-2" to="/sneakers">
+                                        Sneakers
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link className="block py-2" to="/menclothe">
+                                        Clothes
+                                    </Link>
+                                </li>
                                 <li className="relative group/accessory">
                                     <div className="flex items-center cursor-pointer">
                                         Accessories
@@ -86,9 +94,17 @@ const Header = () => {
                         <li className="relative group cursor-pointer list-none ">
                             Women
 
-                            <ul className="absolute p-10 left-0   top-full hidden group-hover:flex flex-col bg-white opacity-80 shadow-lg  rounded-md text-blue-400 font-medium">
-                                <Link className="m-3 " to={'/sneakers'}>Sneakers</Link>
-                                <Link className="m-3 " to={'/womenclothe'}>Clothes</Link>
+                            <ul className="absolute p-6 left-0 top-full hidden group-hover:flex flex-col bg-white opacity-80 shadow-lg rounded-md text-blue-400 font-medium w-48">
+                                <li>
+                                    <Link className="block py-2" to="/sneakers">
+                                        Sneakers
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link className="block py-2" to="/menclothe">
+                                        Clothes
+                                    </Link>
+                                </li>
                                 <li className="relative group/accessoryWomen">
                                     <div className="flex items-center cursor-pointer">
                                         Accessories
@@ -109,10 +125,12 @@ const Header = () => {
                         <li className="relative group cursor-pointer list-none ">
                             Sport
 
-                            <ul className="absolute p-10 left-0   top-full hidden group-hover:flex flex-col bg-white opacity-80 shadow-lg  rounded-md text-blue-400 font-medium">
-                                <Link className="m-3 " to={'/rackets'}>Racket</Link>
-                                <Link className="m-3 " to={'/balls'}>Ball</Link>
-                                <Link className="m-3 " to={'/sneakers'}>Sneakers</Link>
+                            <ul className="absolute p-6 left-0 top-full hidden group-hover:flex flex-col bg-white opacity-80 shadow-lg rounded-md text-blue-400 font-medium w-48">
+                                <li>
+                                    <Link className="" to={'/rackets'}>Racket</Link>
+                                </li>
+                                <li><Link className="" to={'/balls'}>Ball</Link></li>
+                                <li><Link className="" to={'/sneakers'}>Sneakers</Link></li>
                             </ul>
                         </li>
 
@@ -172,7 +190,8 @@ const Header = () => {
 
                             onClick={() => setOpenMenu(true)}
                             className="w-10 h-10 cursor-pointer" />
-                        <MobileMenu open={openMenu} setOpen={setOpenMenu} />                    </div>
+                        <MobileMenu open={openMenu} setOpen={setOpenMenu} />
+                    </div>
                 </div>
 
 

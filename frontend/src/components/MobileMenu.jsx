@@ -4,6 +4,8 @@ import { IoIosClose } from "react-icons/io";
 import { MdNavigateNext } from "react-icons/md";
 
 function MobileMenu({ open, setOpen }) {
+
+    
     const [menOpen, setMenOpen] = useState(false);
     const [womenOpen, setWomenOpen] = useState(false);
     const [sportOpen, setSportOpen] = useState(false);
@@ -108,4 +110,4 @@ function MobileMenu({ open, setOpen }) {
     );
 }
 
-export default MobileMenu;
+export default MobileMenu
