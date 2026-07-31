@@ -6,6 +6,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
 import { CiCirclePlus } from "react-icons/ci";
 import { CiCircleMinus } from "react-icons/ci";
+import RecommandedProduct from './RecommandedProduct';
 
 function CartProductDetails() {
   const [recommandedProduct, setRecommandedProduct] = useState([])
@@ -60,18 +61,8 @@ function CartProductDetails() {
 
 
 
-  const recommandedProducts = async () => {
 
-    const res = await axios.get(
-      `http://localhost:3000/api/getrecommanded?category=${data.category}&brand=${data.brandName}&id=${params.id}`
-    )
-    setRecommandedProduct(res.data.data)
-  }
-  useEffect(() => {
-    if (!data.category) return;
 
-    recommandedProducts();
-  }, [data.category]);
   return (
 
     <>
@@ -152,33 +143,12 @@ function CartProductDetails() {
           </div>
 
         </div>
-        <div className='container'>
-          <h2 className='text-2xl font-bold text-blue-300 mt-10 p-5'>Recommanded Products</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-            {
-              recommandedProduct.map((res, index) => {
-                return (
+        <RecommandedProduct
 
-                  <div className='cart'>
-                    <div className='cart-header'></div>
-                    <div className='cart-body'>
-
-                      <img src={res.productImage[0]} alt="" />
-                    </div>
-
-
-                  </div>
-
-
-
-
-                )
-              })
-            }
-
-          </div>
-
-        </div>
+          category={data.category}
+          brandName={data.brandName}
+          id={params.id}
+        />
       </div>
 
     </>
