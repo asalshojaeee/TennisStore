@@ -1,4 +1,5 @@
 Work In Progress.
+
 This repository contains an e-commerce application that is actively being developed.
 The project demonstrates the current implementation and will continue to receive new features and improvements over time.
 
