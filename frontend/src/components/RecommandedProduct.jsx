@@ -2,10 +2,29 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import displayCurrency from "../helpers/displayCurrency";
+import { CiCircleChevRight } from "react-icons/ci";
+import { CiCircleChevLeft } from "react-icons/ci";
 
 function RecommandedProduct({ category, brandName, id }) {
   const [recommandedProduct, setRecommandedProduct] = useState([]);
   const [currentImage, setCurrentImage] = useState({})
+  const [slide, setSlide] = useState(0)
+
+
+
+  const nextSlide = () => {
+    if (slide < recommandedProduct.length - 3) {
+      setSlide((prev) => prev + 1);
+    }
+
+  }
+
+
+  const preveSlide = () => {
+    if (slide > 0) {
+      setSlide((prev) => prev - 1);
+    }
+  }
 
   const recommandedProducts = async () => {
     try {
@@ -32,54 +51,57 @@ function RecommandedProduct({ category, brandName, id }) {
   return (
 
     <>
-      <h2 className="text-blue-300 font-bold text-xl">
+      <h2 className="text-blue-300 font-bold text-xl p-5">
         Recommanded Products
       </h2>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 mt-5 ">
 
 
+      <div className="w-full border rounded-md border-slate-300 relative flex items-center gap-4 md:gap-6">
 
-        {recommandedProduct.map((pro, index) => {
-          return (
-            <Link to={`/product/${pro?._id}`}>
-              <div className="cart-body  bg-gray-50 cursor-pointer hover:translate-y-0.5 transition-all h-full w-full flex-col  p-5 rounded-xl">
-                <img
-                  src={pro.productImage[0]}
-                  alt=""
-                  className="bg-transparent mix-blend-multiply h-56 rounded-xl object-contain w-full hover:scale-120 transition-all"
-                />
+        <button
+          onClick={preveSlide}
+          className="absolute left-2 top-1/2 -translate-y-1/2 p-2 cursor-pointer"
+        >
+          <CiCircleChevLeft size={35} className="text-green-700" />
+        </button>
 
-                {/* <div className="flex justify-center gap-2 mt-3">
-              {pro.productImage.map((img, i) => (
-                <button
-                  key={i}
-                  onClick={() =>
-                    setCurrentImage(prev => ({
-                      ...prev,
-                      [pro._id]: i,
-                    }))
-                  }
-                  className={`cursor-pointer w-2 h-2 rounded-full ${
-                    (currentImage[pro._id] || 0) === i
-                      ? "bg-blue-600"
-                      : "bg-gray-300"
-                  }`}
-                />
-              ))}
-            </div> */}
+        <button
+          onClick={nextSlide}
+          className="absolute right-2 top-1/2 -translate-y-1/2 p-2 cursor-pointer"
+        >
+          <CiCircleChevRight size={35} className="text-green-700" />
+        </button>
 
-                <div className="text-gray-400 ">
-                  <p className="">
-                    {pro?.brandName}
-                  </p>
-                  <p className="">
-                    {displayCurrency(pro?.price)}
-                  </p>
+        <div className="overflow-hidden">
+          <div
+            className="flex transition-transform duration-500 ease-in-out"
+            style={{
+              transform: `translateX(-${slide * 33.333}%)`,
+            }}
+          >
+            {recommandedProduct.map((pro) => (
+              <Link
+                key={pro._id}
+                to={`/product/${pro._id}`}
+                className="min-w-[33.333%] p-3"
+              >
+                <div className="cart-body cursor-pointer hover:translate-y-0.5 transition-all h-full p-5 rounded-xl">
+                  <img
+                    src={pro.productImage[0]}
+                    alt=""
+                    className="bg-transparent mix-blend-multiply h-56 rounded-xl object-contain w-full hover:scale-110 transition-all"
+                  />
+
+                  <div className="text-gray-400 mt-3">
+                    <p>{pro.brandName}</p>
+                    <p>{displayCurrency(pro.price)}</p>
+                  </div>
                 </div>
-              </div>
-            </Link>
-          );
-        })}
+              </Link>
+            ))}
+          </div>
+        </div>
+
       </div>
     </>
   )
