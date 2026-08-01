@@ -9,7 +9,7 @@ const sneakersProduct = async (req, res) => {
     try {
  
 
-        const product = await productModel.find({category:'shoe'})
+        const product = await productModel.find({category:'sneakers'})
         res.status(201).json({
             success: true,
             error: false,

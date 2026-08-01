@@ -74,44 +74,46 @@ const Ball = () => {
             (
               products.map((pro, index) => {
                 return (
-                  <Link to={`/product/${pro?._id}`}>
 
-                    <div key={index} className='cart-body cursor-pointer hover:translate-y-0.5 transition-all h-full w-full flex-col  shadow-sm p-5 rounded-xl'>
+                  <div key={index} className='cart-body cursor-pointer hover:translate-y-0.5 transition-all h-full w-full flex-col  shadow-sm p-5 rounded-xl'>
+                    <Link to={`/product/${pro?._id}`}>
+
                       <img
-
                         src={pro.productImage[currentImage[pro._id] || 0]}
 
                         alt="" className='bg-transparent mix-blend-multiply h-56 rounded-xl object-cover w-full' />
-                      <div className="flex justify-center gap-2 mt-3">
-                        {pro.productImage.map((img, i) => (
-                          <button
-                            key={i}
-                            onClick={() =>
-                              setCurrentImage(prev => ({
-                                ...prev,
-                                [pro._id]: i
-                              }))
-                            }
-                            className={`cursor-pointer w-2 h-2 rounded-full ${(currentImage[pro._id] || 0) === i
-                              ? "bg-blue-600"
-                              : "bg-gray-300"
-                              }`}
-                          />
-                        ))}
-                      </div>
-                      <p className='text-gray-400 font-medium'>{pro?.productName}</p>
-
-                      <p className='text-blue-400'>Brand: <span className='font-light text-blue-300'>{pro?.brandName}</span></p>
-
-                      <p className='text-blue-300 font-medium'>{displayCurrency(pro?.price)}</p>
+                    </Link>
 
 
-                      {/* <div className='text-center mt-6'>
+                    <div className="flex justify-center gap-2 mt-3">
+                      {pro.productImage.map((img, i) => (
+                        <button
+                          key={i}
+                          onClick={() =>
+                            setCurrentImage(prev => ({
+                              ...prev,
+                              [pro._id]: i
+                            }))
+                          }
+                          className={`cursor-pointer w-2 h-2 rounded-full ${(currentImage[pro._id] || 0) === i
+                            ? "bg-blue-600"
+                            : "bg-gray-300"
+                            }`}
+                        />
+                      ))}
+                    </div>
+                    <p className='text-gray-400 font-medium'>{pro?.productName}</p>
+
+                    <p className='text-blue-400'>Brand: <span className='font-light text-blue-300'>{pro?.brandName}</span></p>
+
+                    <p className='text-blue-300 font-medium'>{displayCurrency(pro?.price)}</p>
+
+
+                    {/* <div className='text-center mt-6'>
                       <button className='bg-blue-400 w-full hover:translate-y-1 transition-all text-white p-2 rounded-md'>Add to cart</button>
 
                     </div> */}
-                    </div>
-                  </Link>
+                  </div>
                 )
 
               })
@@ -123,7 +125,7 @@ const Ball = () => {
 
 
 
-    </section>
+    </section >
   )
 }
 

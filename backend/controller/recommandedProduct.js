@@ -8,10 +8,9 @@ const recommandedProduct = async (req, res) => {
     try {
 
 
-        const { category, brand, id } = req.query
+        const {brand, id } = req.query
         const products = await productModel.find({
             _id: { $ne: id },
-            category,
             brandName: brand
         }).limit(4);
 
