@@ -6,7 +6,7 @@ The project demonstrates the current implementation and will continue to receive
 Below are screenshots showcasing the current state of the application.
 
 #Home Page
-<img width="2560" height="2714" alt="screencapture-localhost-5173-2026-07-31-22_06_53" src="https://github.com/user-attachments/assets/2289b242-263e-41a1-a037-02c2db9b7da6" />
+<img width="2560" height="2714" alt="screencapture-localhost-5173-2026-08-01-13_06_46 (1)" src="https://github.com/user-attachments/assets/9bb75e23-e939-4f27-98fc-59f97d5ceb44" />
 
 
 #SignUp Page
@@ -17,7 +17,8 @@ Below are screenshots showcasing the current state of the application.
 <img width="2560" height="2831" alt="screencapture-localhost-5173-sneakers-2026-07-31-22_07_45" src="https://github.com/user-attachments/assets/e7caa680-c6ea-4efb-baca-86c34975d786" />
 
 #Cart Page
-<img width="2560" height="1937" alt="screencapture-localhost-5173-product-6a57411df15534fb29404e5d-2026-07-31-22_08_24" src="https://github.com/user-attachments/assets/6b547bac-fb11-494b-b8db-a4bdc1dc9e1c" />
+<img width="2560" height="2018" alt="screencapture-localhost-5173-product-6a6db04b70867922e0e7e50d-2026-08-01-13_08_00 (1)" src="https://github.com/user-attachments/assets/a00bee05-2a6f-405d-84b3-f029f0e0b89b" />
+
 
 
 
