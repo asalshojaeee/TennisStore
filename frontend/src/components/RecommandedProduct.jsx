@@ -55,24 +55,23 @@ function RecommandedProduct({ category, brandName, id }) {
         Recommanded Products
       </h2>
 
-
-      <div className="w-full border rounded-md border-slate-300 relative flex items-center gap-4 md:gap-6">
+      <div className="relative w-full border rounded-md border-slate-300">
 
         <button
           onClick={preveSlide}
-          className="absolute left-2 top-1/2 -translate-y-1/2 p-2 cursor-pointer"
+          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 p-2 cursor-pointer"
         >
           <CiCircleChevLeft size={35} className="text-green-700" />
         </button>
 
         <button
           onClick={nextSlide}
-          className="absolute right-2 top-1/2 -translate-y-1/2 p-2 cursor-pointer"
+          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 p-2 cursor-pointer"
         >
           <CiCircleChevRight size={35} className="text-green-700" />
         </button>
 
-        <div className="overflow-hidden">
+        <div className="overflow-hidden w-full">
           <div
             className="flex transition-transform duration-500 ease-in-out"
             style={{
@@ -80,24 +79,25 @@ function RecommandedProduct({ category, brandName, id }) {
             }}
           >
             {recommandedProduct.map((pro) => (
-              <Link
+              <div
                 key={pro._id}
-                to={`/product/${pro._id}`}
-                className="min-w-[33.333%] p-3"
+                className="min-w-[33.333%] flex-shrink-0 p-3"
               >
-                <div className="cart-body cursor-pointer hover:translate-y-0.5 transition-all h-full p-5 rounded-xl">
-                  <img
-                    src={pro.productImage[0]}
-                    alt=""
-                    className="bg-transparent mix-blend-multiply h-56 rounded-xl object-contain w-full hover:scale-110 transition-all"
-                  />
+                <Link to={`/product/${pro._id}`}>
+                  <div className="cart-body cursor-pointer hover:translate-y-0.5 transition-all rounded-xl h-full">
+                    <img
+                      src={pro.productImage[0]}
+                      alt={pro.productName}
+                      className="bg-transparent mix-blend-multiply h-56 w-full object-contain rounded-xl hover:scale-110 transition-all"
+                    />
 
-                  <div className="text-gray-400 mt-3">
-                    <p>{pro.brandName}</p>
-                    <p>{displayCurrency(pro.price)}</p>
+                    <div className="text-gray-400 mt-3">
+                      <p>{pro.brandName}</p>
+                      <p>{displayCurrency(pro.price)}</p>
+                    </div>
                   </div>
-                </div>
-              </Link>
+                </Link>
+              </div>
             ))}
           </div>
         </div>

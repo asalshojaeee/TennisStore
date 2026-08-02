@@ -12,7 +12,7 @@ const recommandedProduct = async (req, res) => {
         const products = await productModel.find({
             _id: { $ne: id },
             brandName: brand
-        }).limit(4);
+        });
 
         res.json({
             success: true,
