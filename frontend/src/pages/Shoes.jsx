@@ -12,24 +12,29 @@ const Shoes = () => {
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true);
     const [currentImage, setCurrentImage] = useState({})
+    const [page, setPage] = useState(1)
 
+    const [totalPages, setTotalPages] = useState(1)
+
+    const limit = 6
 
     const getProduct = async () => {
         setLoading(true)
-        const responseData = await axios.get(`http://localhost:3000/api/getsneakersproduct`)
+        const responseData = await axios.get(`http://localhost:3000/api/getsneakersproduct?page=${page}&limit=${limit}`)
         setProducts(responseData.data.data)
+        setTotalPages(responseData.data.totalPages)
         setLoading(false)
 
     }
     useEffect(() => {
         getProduct()
-    }, [])
+    }, [page])
     return (
 
 
 
         <section className='m-2 overflow-hidden'>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
 
 
                 {
@@ -133,6 +138,32 @@ const Shoes = () => {
                 }
 
 
+
+            </div>
+
+            <div className="flex justify-center gap-2 mt-8">
+
+                {
+                    Array.from({ length: totalPages }, (_, index) => (
+
+                        <button
+                            key={index}
+                            onClick={() => setPage(index + 1)}
+                            className={`px-4 py-2 rounded
+${page === index + 1
+                                    ?
+                                    "bg-blue-500 text-white"
+                                    :
+                                    "bg-gray-200"
+                                }
+`}
+                        >
+                            {index + 1}
+
+                        </button>
+
+                    ))
+                }
 
             </div>
 
