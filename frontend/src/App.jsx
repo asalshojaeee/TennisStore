@@ -25,6 +25,7 @@ import Hat from "./pages/Hat"
 import Socks from "./pages/Socks"
 import CartProductDetails from "./components/CartProductDetails"
 import SearchProduct from "./pages/SearchProduct"
+import Cart from "./pages/Cart"
 
 
 
@@ -77,6 +78,7 @@ function App() {
             <Route path="/socks" element={<Socks/>}/>
             <Route path="/product/:id" element={<CartProductDetails/>}/>
             <Route path="/search" element={<SearchProduct/>}/>
+            <Route path="/cart" element={<Cart/>}/>
 
           </Route>
         </Route>

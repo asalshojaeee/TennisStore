@@ -162,18 +162,34 @@ const Header = () => {
 
                             )
                         }
-                        {
-                            user?._id && (<CiShoppingCart className="text-blue-400 w-8 h-8 cursor-pointer" />
-                            )
-                        }
+
                     </div>
 
 
                     {
-                        user?._id ? (<button onClick={handleLogOut} className="bg-red-500 p-2 hover:translate-y-0.5 transition-all rounded-lg text-white cursor-pointer"
-                        >
-                            LogOut
-                        </button>) :
+                        user?._id ? (
+
+                            <>
+                                <Link
+                                    to="/cart"
+                                    className="p-2 text-2xl cursor-pointer"
+                                >
+
+
+                                    <div className='relative text-center'>
+                                        <p className='absolute w-4 h-5 text-sm top-0 mx-auto bg-red-600 rounded-full text-white'>0</p>
+                                        <CiShoppingCart className="text-blue-400 w-10 h-10 cursor-pointer" />
+
+
+                                    </div>
+                                </Link>
+                                <button onClick={handleLogOut} className="bg-red-500 p-2 hover:translate-y-0.5 transition-all rounded-lg text-white cursor-pointer"
+                                >
+                                    LogOut
+                                </button>
+                            </>
+
+                        ) :
 
                             (<Link to={'/login'} className="bg-blue-300 p-2 rounded-lg text-white cursor-pointer"
                             >
