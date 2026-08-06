@@ -34,10 +34,10 @@ const Home = () => {
 
             <h2 className="text-green-600 text-3xl font-bold  uppercase p-5">Biggest Discounts
             </h2>
-            <div className=" flex gap-5 rounded-sm text-yellow-300 font-bold text-xl bg-green-800 opacity-80 w-100 p-5">
+            <div className=" flex flex-wrap gap-5 rounded-sm text-yellow-300 font-bold text-xl bg-green-800 opacity-80 max-w-100 p-5">
                 <div className="bg-white opacity-70 p-3 rounded-sm">2</div>
                 <div className="bg-white opacity-70 p-3 rounded-sm">5</div>
-                <div className="bg-white opacity-70 p-3 rounded-sm">%</div>
+                <div className="bg-white opacity-70 p-3 rounded-sm  rotate-x-120 transition-all">%</div>
                 <div className="bg-white opacity-70 p-3 rounded-sm">O</div>
                 <div className="bg-white opacity-70 p-3 rounded-sm">F</div>
                 <div className="bg-white opacity-70 p-3 rounded-sm">F</div>
@@ -45,7 +45,7 @@ const Home = () => {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 md:gap-5 p-5">
                 {discountProducts.map((product) => (
-                    <div key={product._id} className="card border border-gray-300 rounded-md p-5 text-blue-400">
+                    <div key={product._id} className="card border border-gray-200 rounded-md p-5 text-blue-400">
                         <div className="">
                             <img src={product.productImage[0]} className="w-50 h-60 m-auto" />
 
@@ -62,7 +62,7 @@ const Home = () => {
                             </p>
                         </div>
                         <div className="mt-3 relative text-center">
-                            <button className="w-full bg-blue-400 p-3 rounded-sm text-white font-bold">
+                            <button className="w-full cursor-pointer bg-green-800 p-3 rounded-sm text-white font-bold">
                                 Add To Cart
                             </button>
 

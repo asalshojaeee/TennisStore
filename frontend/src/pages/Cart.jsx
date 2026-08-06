@@ -5,16 +5,17 @@ function Cart() {
 
 
         <div className='flex flex-row  md:flex md:gap-5 gap-3'>
-            <div>
+            <div className='p-5 flex flex-col gap-5'>
 
                 <table className=''>
-                    <tr>
-                        <th>Product</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>Partial sum
+                    <tr className='text-gray-400'>
+                        <th className='p-5'>Product</th>
+                        <th className='p-5'>Price</th>
+                        <th className='p-5'>Quantity</th>
+                        <th className='p-5'>Partial sum
                         </th>
                     </tr>
+
                 </table>
             </div>
             <div className='border  border-blue-300 shadow-md p-5 flex flex-col gap-5'>

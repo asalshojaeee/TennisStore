@@ -61,7 +61,10 @@ function CartProductDetails() {
   }, [params])
 
 
+  const handleAddToCart = async () => {
+    const result  =axios.post("http://localhost:3000/api/addtocart",)
 
+  }
 
 
   return (
@@ -114,20 +117,26 @@ function CartProductDetails() {
               {data.sellingPrice}
             </p>
 
-            <div className="flex items-center justify-start gap-4 mt-6 text-gray-500">
-              <span>Size</span>
+            <div className="mt-6">
+              <p className="mb-3 text-gray-500">Size</p>
 
-              <ul className="flex gap-3">
-                <li className="w-10 h-10 rounded-full border border-blue-400 flex justify-center items-center">
-                  38
-                </li>
-                <li className="w-10 h-10 rounded-full border border-blue-400 flex justify-center items-center">
-                  45
-                </li>
-                <li className="w-10 h-10 rounded-full border border-blue-400 flex justify-center items-center">
-                  47
-                </li>
-              </ul>
+              <div className="flex gap-3 ">
+                <button className="w-10 h-10 border border-gray-300 rounded hover:border-blue-400 cursor-pointer">
+                  39
+                </button>
+
+                <button className="w-10 h-10 border border-gray-300 rounded hover:border-blue-400 cursor-pointer">
+                  40
+                </button>
+
+                <button className="w-10 h-10 border border-gray-300 rounded hover:border-blue-400 cursor-pointer">
+                  41
+                </button>
+
+                <button className="w-10 h-10 border border-gray-300 rounded hover:border-blue-400 cursor-pointer">
+                  42
+                </button>
+              </div>
             </div>
             <div className='flex flex-row items-center justify-start mt-20 gap-3 '>
               <button className='cursor-pointer'><CiCirclePlus className='text-3xl text-gray-400' onClick={handleQuantityPlus} /></button>
@@ -135,7 +144,11 @@ function CartProductDetails() {
 
               <button className='cursor-pointer'><CiCircleMinus className='text-3xl text-gray-400' onClick={handleQuantityMinus} /></button>
 
-              <button className="cursor-pointer hover:translate-y-0.5 transition-all w-full md:w-60 bg-blue-500 text-white p-3 rounded-lg">
+              <button
+                onClick={handleAddToCart}
+
+
+                className="cursor-pointer hover:translate-y-0.5 transition-all w-full md:w-60 bg-blue-500 text-white p-3 rounded-lg">
                 Add to cart
               </button>
             </div>
