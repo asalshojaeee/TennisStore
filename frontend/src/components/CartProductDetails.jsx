@@ -8,6 +8,8 @@ import React, { useEffect, useState } from 'react'
 import { CiCirclePlus } from "react-icons/ci";
 import { CiCircleMinus } from "react-icons/ci";
 import RecommandedProduct from './RecommandedProduct';
+import { useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 
 function CartProductDetails() {
   const [recommandedProduct, setRecommandedProduct] = useState([])
@@ -15,6 +17,7 @@ function CartProductDetails() {
   const [quantity, setQuantity] = useState(1)
   const [activeImage, setActiveImage] = useState("")
 
+  const user = useSelector(state => state?.user?.user)
 
   const handleQuantityPlus = (e) => {
 
@@ -62,7 +65,15 @@ function CartProductDetails() {
 
 
   const handleAddToCart = async () => {
-    const result  =axios.post("http://localhost:3000/api/addtocart",)
+    const result = axios.post("http://localhost:3000/api/addtocart", {
+      quantity: quantity,
+      productId: params?.id,
+      userId: user._id
+    })
+    if (result.success) {
+      toast.success(result.message)
+
+    }
 
   }
 

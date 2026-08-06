@@ -43,7 +43,7 @@ router.post('/getproductdetail', getProductDetails)
 router.get('/getrecommanded', recommandedProduct)
 router.get('/searchproduct', searchProduct)
 router.get('/discounts', discountController)
-router.post('/addtocart', authorization,addToCart)
+router.post('/addtocart',addToCart)
 
 
 module.exports = router

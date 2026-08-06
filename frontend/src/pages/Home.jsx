@@ -34,7 +34,7 @@ const Home = () => {
 
             <h2 className="text-green-600 text-3xl font-bold  uppercase p-5">Biggest Discounts
             </h2>
-            <div className=" flex flex-wrap gap-5 rounded-sm text-yellow-300 font-bold text-xl bg-green-800 opacity-80 max-w-100 p-5">
+            <div className=" flex mx-auto justify-center items-center text-center flex-wrap gap-5 rounded-sm text-yellow-300 font-bold text-xl bg-green-800 opacity-80 max-w-100 p-5">
                 <div className="bg-white opacity-70 p-3 rounded-sm">2</div>
                 <div className="bg-white opacity-70 p-3 rounded-sm">5</div>
                 <div className="bg-white opacity-70 p-3 rounded-sm  rotate-x-120 transition-all">%</div>
@@ -43,7 +43,7 @@ const Home = () => {
                 <div className="bg-white opacity-70 p-3 rounded-sm">F</div>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 md:gap-5 p-5">
+            <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 md:gap-5 p-5">
                 {discountProducts.map((product) => (
                     <div key={product._id} className="card border border-gray-200 rounded-md p-5 text-blue-400">
                         <div className="">
