@@ -68,7 +68,10 @@ function CartProductDetails() {
     const result = axios.post("http://localhost:3000/api/addtocart", {
       quantity: quantity,
       productId: params?.id,
-      userId: user._id
+      productName:data?.productName,
+      userId: user._id,
+      sellingPrice: data?.sellingPrice,
+      productImage:data?.productImage[0]
     })
     if (result.success) {
       toast.success(result.message)
