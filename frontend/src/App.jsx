@@ -7,11 +7,12 @@ import store from "./store/store"
 import Login from './pages/Login'
 import SignUp from "./pages/SignUp"
 import Ball from "./pages/Ball"
+import Context from "./context"
 
 import { ToastContainer, toast } from 'react-toastify';
 
 import "react-toastify/dist/ReactToastify.css";
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import axios from "axios"
 import { useDispatch } from "react-redux"
 import { setUserDetails } from "./store/userSlice"
@@ -33,7 +34,7 @@ function App() {
 
   const dispatch = useDispatch()
   const fetchUserDetail = async () => {
-
+    const [count, setCount] = useState(0)
 
     try {
       const responseData = await axios.get('http://localhost:3000/api/userdetail', {
@@ -56,43 +57,68 @@ function App() {
     fetchUserDetail();
   }, []);
 
+
+
+
+  const countProduct = async () => {
+    const res = await axios.get("http://localhost:3000/api/countproduct")
+
+    setCount(res.data.data)
+
+
+  }
+
+  useEffect(() => {
+    countProduct()
+  }, [])
+
+
+
   return (
     <>
 
-      <Routes>
+      <Context.Provider value={{
+        countProduct
+      }}
+      >
 
-        <Route>
 
 
-          <Route element={<Layout />}>
 
-            <Route path="/" element={<Home />} />
-            <Route path='/sneakers' element={<Shoes/>}/>
-            <Route path="/balls" element={<Ball/>}/>
-            <Route path="/rackets" element={<Racket/>}/>
-            <Route path="/menclothe" element={<MenClothes/>}/>
-            <Route path="/womenclothe" element={<WomenClothes/>}/>
+        <Routes>
 
-            <Route path="/bag" element={<Bag/>}/>
-            <Route path="/hat" element={<Hat/>}/>
-            <Route path="/socks" element={<Socks/>}/>
-            <Route path="/product/:id" element={<CartProductDetails/>}/>
-            <Route path="/search" element={<SearchProduct/>}/>
-            <Route path="/cart" element={<Cart/>}/>
+          <Route>
 
+
+            <Route element={<Layout />}>
+
+              <Route path="/" element={<Home />} />
+              <Route path='/sneakers' element={<Shoes />} />
+              <Route path="/balls" element={<Ball />} />
+              <Route path="/rackets" element={<Racket />} />
+              <Route path="/menclothe" element={<MenClothes />} />
+              <Route path="/womenclothe" element={<WomenClothes />} />
+
+              <Route path="/bag" element={<Bag />} />
+              <Route path="/hat" element={<Hat />} />
+              <Route path="/socks" element={<Socks />} />
+              <Route path="/product/:id" element={<CartProductDetails />} />
+              <Route path="/search" element={<SearchProduct />} />
+              <Route path="/cart" element={<Cart />} />
+
+            </Route>
           </Route>
-        </Route>
 
 
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="adminpanel" element={<AdminPanel />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="adminpanel" element={<AdminPanel />} />
 
-      </Routes>
+        </Routes>
 
 
-      <ToastContainer />
-
+        <ToastContainer />
+      </Context.Provider>
     </>
   )
 }

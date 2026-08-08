@@ -1,8 +1,8 @@
 
-
+import Context from '../context'
 import axios from 'axios'
 import { FaStar } from "react-icons/fa6";
-
+import { useContext } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
 import { CiCirclePlus } from "react-icons/ci";
@@ -12,6 +12,9 @@ import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 
 function CartProductDetails() {
+
+
+  const { countProduct } = useContext(Context)
   const [recommandedProduct, setRecommandedProduct] = useState([])
 
   const [quantity, setQuantity] = useState(1)
@@ -68,16 +71,12 @@ function CartProductDetails() {
     const result = axios.post("http://localhost:3000/api/addtocart", {
       quantity: quantity,
       productId: params?.id,
-      productName:data?.productName,
+      productName: data?.productName,
       userId: user._id,
       sellingPrice: data?.sellingPrice,
-      productImage:data?.productImage[0]
+      productImage: data?.productImage[0]
     })
-    if (result.success) {
-      toast.success(result.message)
-
-    }
-
+    countProduct()
   }
 
 

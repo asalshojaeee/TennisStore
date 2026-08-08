@@ -15,7 +15,22 @@ import model90 from '../assets/images/model90.jpg'
 import Footer from "../components/Footer"
 import axios from 'axios'
 import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 const Home = () => {
+    const user = useSelector(state => state?.user?.user)
+
+
+    const [data, setData] = useState({
+        productId: "",
+        productName: "",
+        price: Number,
+        brandName: "",
+        sellingPrice: Number,
+        category: "",
+        description: "",
+        productImage: []
+    })
     const [discountProducts, setDiscountProducts] = useState([]);
 
     const fetchData = async () => {
@@ -26,6 +41,20 @@ const Home = () => {
     useEffect(() => {
         fetchData()
     }, [])
+
+    // const handleAddToCart = async () => {
+    //     const result = axios.post("http://localhost:3000/api/addtocart", {
+    //         productId: data.productId,
+    //         productName: data?.productName,
+    //         userId: user._id,
+    //         sellingPrice: data?.sellingPrice,
+    //         productImage: data?.productImage[0]
+    //     })
+    //     setData(result.data.data)
+
+      
+    // }
+
 
     return (
         <>
@@ -62,7 +91,9 @@ const Home = () => {
                             </p>
                         </div>
                         <div className="mt-3 relative text-center">
-                            <button className="w-full cursor-pointer bg-green-800 p-3 rounded-sm text-white font-bold">
+                            <button
+
+                                className="w-full cursor-pointer bg-green-800 p-3 rounded-sm text-white font-bold">
                                 Add To Cart
                             </button>
 

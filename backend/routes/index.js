@@ -9,7 +9,7 @@ const authorization = require('../middleware/authorization');
 const uploadProduct = require('../controller/uploadProduct');
 const sneakersProduct = require('../controller/sneakersProduct');
 const getBallProduct = require('../controller/getBallProduct');
-
+const countProduct = require('../controller/countProduct')
 const getRacketProducts = require('../controller/getRacketProducts');
 const menClothes = require('../controller/getMenClothes');
 const getWomenClothes = require('../controller/getWomenClothes');
@@ -45,5 +45,6 @@ router.get('/discounts', discountController)
 router.post('/addtocart', addToCart)
 router.get('/cart', cart)
 
+router.get('/countproduct', countProduct)
 
 module.exports = router
