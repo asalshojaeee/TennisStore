@@ -31,10 +31,10 @@ import Cart from "./pages/Cart"
 
 
 function App() {
+  const [count, setCount] = useState(0)
 
   const dispatch = useDispatch()
   const fetchUserDetail = async () => {
-    const [count, setCount] = useState(0)
 
     try {
       const responseData = await axios.get('http://localhost:3000/api/userdetail', {
@@ -62,8 +62,8 @@ function App() {
 
   const countProduct = async () => {
     const res = await axios.get("http://localhost:3000/api/countproduct")
-
     setCount(res.data.data)
+
 
 
   }
@@ -78,6 +78,7 @@ function App() {
     <>
 
       <Context.Provider value={{
+        count,
         countProduct
       }}
       >

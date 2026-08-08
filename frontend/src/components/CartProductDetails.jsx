@@ -68,7 +68,7 @@ function CartProductDetails() {
 
 
   const handleAddToCart = async () => {
-    const result = axios.post("http://localhost:3000/api/addtocart", {
+    const result = await axios.post("http://localhost:3000/api/addtocart", {
       quantity: quantity,
       productId: params?.id,
       productName: data?.productName,

@@ -16,10 +16,11 @@ import { MdNavigateNext } from "react-icons/md";
 import MobileMenu from './MobileMenu';
 import '../assets/style/header.css'
 import Context from '../context';
-
+import { useContext } from 'react';
 
 
 const Header = () => {
+    const context = useContext(Context)
     const user = useSelector(state => state?.user?.user)
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -178,7 +179,7 @@ const Header = () => {
 
 
                                     <div className='relative text-center'>
-                                        <p className='absolute w-4 h-5 text-sm top-0 mx-auto bg-red-600 rounded-full text-white'>{Context?.count}</p>
+                                        <p className='absolute w-4 h-5 text-sm top-0 mx-auto bg-red-600 rounded-full text-white'>{context?.count}</p>
                                         <CiShoppingCart className="text-blue-400 w-10 h-10 cursor-pointer" />
 
 
