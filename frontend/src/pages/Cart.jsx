@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import displayCurrency from '../helpers/displayCurrency'
 function Cart() {
 
     const [data, setData] = useState([])
@@ -8,7 +9,7 @@ function Cart() {
     const fetchData = async () => {
 
         const res = await axios.get("http://localhost:3000/api/cart")
-
+        console.log(res)
         setData(res.data?.data)
 
 
@@ -17,6 +18,12 @@ function Cart() {
     useEffect(() => {
         fetchData()
     }, [])
+
+
+    const tottalPrice = data.reduce((total, item) => {
+        return total + Number(item.sellingPrice) * Number(item.quantity)
+
+    }, 0)
     return (
 
 
@@ -83,7 +90,7 @@ function Cart() {
 
                     <div className="flex justify-between mb-5">
                         <span className="text-gray-500">Total</span>
-                        <span className="font-bold">$250</span>
+                        <span className="font-bold">{displayCurrency(tottalPrice)}</span>
                     </div>
 
                     <button className="w-full h-11 bg-red-600 hover:bg-red-700 transition rounded-md text-white font-semibold cursor-pointer">

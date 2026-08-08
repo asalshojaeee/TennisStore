@@ -11,7 +11,7 @@ const cartSchema = new mongoose.Schema({
     productImage: [],
     quantity: Number,
     size: String,
-    sellingPrice: String
+    sellingPrice: Number
 }, {
     timestamps: true
 })
